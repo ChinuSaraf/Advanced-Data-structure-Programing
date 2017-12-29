@@ -1,0 +1,1041 @@
+{\rtf1\ansi\deff3\adeflang1025
+{\fonttbl{\f0\froman\fprq2\fcharset0 Times New Roman;}{\f1\froman\fprq2\fcharset2 Symbol;}{\f2\fswiss\fprq2\fcharset0 Arial;}{\f3\froman\fprq2\fcharset0 Liberation Serif{\*\falt Times New Roman};}{\f4\fswiss\fprq2\fcharset0 Liberation Sans{\*\falt Arial};}{\f5\froman\fprq2\fcharset0 Calibri;}{\f6\fnil\fprq2\fcharset0 Noto Sans CJK SC Regular;}{\f7\fnil\fprq2\fcharset0 FreeSans;}{\f8\fswiss\fprq0\fcharset128 FreeSans;}}
+{\colortbl;\red0\green0\blue0;\red0\green0\blue255;\red0\green255\blue255;\red0\green255\blue0;\red255\green0\blue255;\red255\green0\blue0;\red255\green255\blue0;\red255\green255\blue255;\red0\green0\blue128;\red0\green128\blue128;\red0\green128\blue0;\red128\green0\blue128;\red128\green0\blue0;\red128\green128\blue0;\red128\green128\blue128;\red192\green192\blue192;}
+{\stylesheet{\s0\snext0\nowidctlpar\hyphpar0\cf0\kerning1\dbch\af6\langfe2052\dbch\af7\afs24\alang1081\loch\f3\fs24\lang16393 Normal;}
+{\s15\sbasedon0\snext16\sb240\sa120\keepn\dbch\af6\dbch\af7\afs28\loch\f4\fs28 Heading;}
+{\s16\sbasedon0\snext16\sl288\slmult1\sb0\sa140 Text Body;}
+{\s17\sbasedon16\snext17\sl288\slmult1\sb0\sa140\dbch\af8 List;}
+{\s18\sbasedon0\snext18\sb120\sa120\noline\i\dbch\af8\afs24\ai\fs24 Caption;}
+{\s19\sbasedon0\snext19\noline\dbch\af8 Index;}
+}{\*\generator LibreOffice/5.1.6.2$Linux_X86_64 LibreOffice_project/10m0$Build-2}{\info{\creatim\yr0\mo0\dy0\hr0\min0}{\revtim\yr2017\mo4\dy4\hr23\min50}{\printim\yr0\mo0\dy0\hr0\min0}}\deftab720
+\viewscale100
+{\*\pgdsctbl
+{\pgdsc0\pgdscuse451\pgwsxn12240\pghsxn15840\marglsxn1800\margrsxn1800\margtsxn1440\margbsxn1440\pgdscnxt0 Default Style;}}
+\formshade{\*\pgdscno0}\paperh15840\paperw12240\margl1800\margr1800\margt1440\margb1440\sectd\sbknone\sectunlocked1\pgndec\pgwsxn12240\pghsxn15840\marglsxn1800\margrsxn1800\margtsxn1440\margbsxn1440\ftnbj\ftnstart1\ftnrstcont\ftnnar\aenddoc\aftnrstcont\aftnstart1\aftnnrlc
+{\*\ftnsep}\pgndec\pard\plain \s0\nowidctlpar\hyphpar0\cf0\kerning1\dbch\af6\langfe2052\dbch\af7\afs24\alang1081\loch\f3\fs24\lang16393\sl276\slmult1\sb0\sa200{\rtlch \ltrch\loch\fs22\lang9\loch\f5
+/*Problem Statement-: There are flight paths between cities. If there is a flight between city A}
+\par \pard\plain \s0\nowidctlpar\hyphpar0\cf0\kerning1\dbch\af6\langfe2052\dbch\af7\afs24\alang1081\loch\f3\fs24\lang16393\sl276\slmult1\sb0\sa200{\rtlch \ltrch\fs22\lang9\loch\f5
+ }{\rtlch \ltrch\loch\fs22\lang9\loch\f5
+and city B then there is an edge between the cities. The cost of the edge can be the time that}
+\par \pard\plain \s0\nowidctlpar\hyphpar0\cf0\kerning1\dbch\af6\langfe2052\dbch\af7\afs24\alang1081\loch\f3\fs24\lang16393\sl276\slmult1\sb0\sa200{\rtlch \ltrch\fs22\lang9\loch\f5
+ }{\rtlch \ltrch\loch\fs22\lang9\loch\f5
+flight takes to reach city B from A, or the amount of fuel used for the journey. Represent this}
+\par \pard\plain \s0\nowidctlpar\hyphpar0\cf0\kerning1\dbch\af6\langfe2052\dbch\af7\afs24\alang1081\loch\f3\fs24\lang16393\sl276\slmult1\sb0\sa200{\rtlch \ltrch\fs22\lang9\loch\f5
+ }{\rtlch \ltrch\loch\fs22\lang9\loch\f5
+as a graph. The node can be represented by airport name or name of the city. Use adjacency list}
+\par \pard\plain \s0\nowidctlpar\hyphpar0\cf0\kerning1\dbch\af6\langfe2052\dbch\af7\afs24\alang1081\loch\f3\fs24\lang16393\sl276\slmult1\sb0\sa200{\rtlch \ltrch\fs22\lang9\loch\f5
+ }{\rtlch \ltrch\loch\fs22\lang9\loch\f5
+representation of the graph or use adjacency matrix representation of the graph. Justify the}
+\par \pard\plain \s0\nowidctlpar\hyphpar0\cf0\kerning1\dbch\af6\langfe2052\dbch\af7\afs24\alang1081\loch\f3\fs24\lang16393\sl276\slmult1\sb0\sa200{\rtlch \ltrch\fs22\lang9\loch\f5
+ }{\rtlch \ltrch\loch\fs22\lang9\loch\f5
+storage representation used.(Operation to be performed adding and deleting edge, adding and}
+\par \pard\plain \s0\nowidctlpar\hyphpar0\cf0\kerning1\dbch\af6\langfe2052\dbch\af7\afs24\alang1081\loch\f3\fs24\lang16393\sl276\slmult1\sb0\sa200{\rtlch \ltrch\fs22\lang9\loch\f5
+ }{\rtlch \ltrch\loch\fs22\lang9\loch\f5
+deleting vertices, calculated in-degree and out-degree for both directed and undirected graph)*/}
+\par \pard\plain \s0\nowidctlpar\hyphpar0\cf0\kerning1\dbch\af6\langfe2052\dbch\af7\afs24\alang1081\loch\f3\fs24\lang16393\sl276\slmult1\sb0\sa200\rtlch \ltrch\loch\fs22\lang9\loch\f5
+
+\par \pard\plain \s0\nowidctlpar\hyphpar0\cf0\kerning1\dbch\af6\langfe2052\dbch\af7\afs24\alang1081\loch\f3\fs24\lang16393\sl276\slmult1\sb0\sa200{\rtlch \ltrch\loch\fs22\lang9\loch\f5
+#include<iostream>}
+\par \pard\plain \s0\nowidctlpar\hyphpar0\cf0\kerning1\dbch\af6\langfe2052\dbch\af7\afs24\alang1081\loch\f3\fs24\lang16393\sl276\slmult1\sb0\sa200{\rtlch \ltrch\loch\fs22\lang9\loch\f5
+#include<cstring>}
+\par \pard\plain \s0\nowidctlpar\hyphpar0\cf0\kerning1\dbch\af6\langfe2052\dbch\af7\afs24\alang1081\loch\f3\fs24\lang16393\sl276\slmult1\sb0\sa200{\rtlch \ltrch\loch\fs22\lang9\loch\f5
+#include<cstdlib>}
+\par \pard\plain \s0\nowidctlpar\hyphpar0\cf0\kerning1\dbch\af6\langfe2052\dbch\af7\afs24\alang1081\loch\f3\fs24\lang16393\sl276\slmult1\sb0\sa200{\rtlch \ltrch\loch\fs22\lang9\loch\f5
+using namespace std;}
+\par \pard\plain \s0\nowidctlpar\hyphpar0\cf0\kerning1\dbch\af6\langfe2052\dbch\af7\afs24\alang1081\loch\f3\fs24\lang16393\sl276\slmult1\sb0\sa200{\rtlch \ltrch\loch\fs22\lang9\loch\f5
+class node}
+\par \pard\plain \s0\nowidctlpar\hyphpar0\cf0\kerning1\dbch\af6\langfe2052\dbch\af7\afs24\alang1081\loch\f3\fs24\lang16393\sl276\slmult1\sb0\sa200{\rtlch \ltrch\loch\fs22\lang9\loch\f5
+\{}
+\par \pard\plain \s0\nowidctlpar\hyphpar0\cf0\kerning1\dbch\af6\langfe2052\dbch\af7\afs24\alang1081\loch\f3\fs24\lang16393\sl276\slmult1\sb0\sa200{\rtlch \ltrch\fs22\lang9\loch\f5
+    }{\rtlch \ltrch\loch\fs22\lang9\loch\f5
+char name[30];}
+\par \pard\plain \s0\nowidctlpar\hyphpar0\cf0\kerning1\dbch\af6\langfe2052\dbch\af7\afs24\alang1081\loch\f3\fs24\lang16393\sl276\slmult1\sb0\sa200{\rtlch \ltrch\loch\fs22\lang9\loch\f5
+\tab float weight;}
+\par \pard\plain \s0\nowidctlpar\hyphpar0\cf0\kerning1\dbch\af6\langfe2052\dbch\af7\afs24\alang1081\loch\f3\fs24\lang16393\sl276\slmult1\sb0\sa200{\rtlch \ltrch\loch\fs22\lang9\loch\f5
+\tab node *next;}
+\par \pard\plain \s0\nowidctlpar\hyphpar0\cf0\kerning1\dbch\af6\langfe2052\dbch\af7\afs24\alang1081\loch\f3\fs24\lang16393\sl276\slmult1\sb0\sa200{\rtlch \ltrch\loch\fs22\lang9\loch\f5
+\tab public:}
+\par \pard\plain \s0\nowidctlpar\hyphpar0\cf0\kerning1\dbch\af6\langfe2052\dbch\af7\afs24\alang1081\loch\f3\fs24\lang16393\sl276\slmult1\sb0\sa200{\rtlch \ltrch\loch\fs22\lang9\loch\f5
+\tab node()\{\}}
+\par \pard\plain \s0\nowidctlpar\hyphpar0\cf0\kerning1\dbch\af6\langfe2052\dbch\af7\afs24\alang1081\loch\f3\fs24\lang16393\sl276\slmult1\sb0\sa200{\rtlch \ltrch\loch\fs22\lang9\loch\f5
+\tab node(float wt)}
+\par \pard\plain \s0\nowidctlpar\hyphpar0\cf0\kerning1\dbch\af6\langfe2052\dbch\af7\afs24\alang1081\loch\f3\fs24\lang16393\sl276\slmult1\sb0\sa200{\rtlch \ltrch\loch\fs22\lang9\loch\f5
+\tab \{}
+\par \pard\plain \s0\nowidctlpar\hyphpar0\cf0\kerning1\dbch\af6\langfe2052\dbch\af7\afs24\alang1081\loch\f3\fs24\lang16393\sl276\slmult1\sb0\sa200\rtlch \ltrch\loch\fs22\lang9\loch\f5
+
+\par \pard\plain \s0\nowidctlpar\hyphpar0\cf0\kerning1\dbch\af6\langfe2052\dbch\af7\afs24\alang1081\loch\f3\fs24\lang16393\sl276\slmult1\sb0\sa200{\rtlch \ltrch\loch\fs22\lang9\loch\f5
+\tab \tab weight=wt;}
+\par \pard\plain \s0\nowidctlpar\hyphpar0\cf0\kerning1\dbch\af6\langfe2052\dbch\af7\afs24\alang1081\loch\f3\fs24\lang16393\sl276\slmult1\sb0\sa200{\rtlch \ltrch\loch\fs22\lang9\loch\f5
+\tab \tab next=NULL;}
+\par \pard\plain \s0\nowidctlpar\hyphpar0\cf0\kerning1\dbch\af6\langfe2052\dbch\af7\afs24\alang1081\loch\f3\fs24\lang16393\sl276\slmult1\sb0\sa200{\rtlch \ltrch\loch\fs22\lang9\loch\f5
+\tab \}}
+\par \pard\plain \s0\nowidctlpar\hyphpar0\cf0\kerning1\dbch\af6\langfe2052\dbch\af7\afs24\alang1081\loch\f3\fs24\lang16393\sl276\slmult1\sb0\sa200{\rtlch \ltrch\loch\fs22\lang9\loch\f5
+\tab friend class graph;}
+\par \pard\plain \s0\nowidctlpar\hyphpar0\cf0\kerning1\dbch\af6\langfe2052\dbch\af7\afs24\alang1081\loch\f3\fs24\lang16393\sl276\slmult1\sb0\sa200\rtlch \ltrch\loch\fs22\lang9\loch\f5
+
+\par \pard\plain \s0\nowidctlpar\hyphpar0\cf0\kerning1\dbch\af6\langfe2052\dbch\af7\afs24\alang1081\loch\f3\fs24\lang16393\sl276\slmult1\sb0\sa200{\rtlch \ltrch\loch\fs22\lang9\loch\f5
+\};}
+\par \pard\plain \s0\nowidctlpar\hyphpar0\cf0\kerning1\dbch\af6\langfe2052\dbch\af7\afs24\alang1081\loch\f3\fs24\lang16393\sl276\slmult1\sb0\sa200\rtlch \ltrch\loch\fs22\lang9\loch\f5
+
+\par \pard\plain \s0\nowidctlpar\hyphpar0\cf0\kerning1\dbch\af6\langfe2052\dbch\af7\afs24\alang1081\loch\f3\fs24\lang16393\sl276\slmult1\sb0\sa200{\rtlch \ltrch\loch\fs22\lang9\loch\f5
+class graph}
+\par \pard\plain \s0\nowidctlpar\hyphpar0\cf0\kerning1\dbch\af6\langfe2052\dbch\af7\afs24\alang1081\loch\f3\fs24\lang16393\sl276\slmult1\sb0\sa200{\rtlch \ltrch\loch\fs22\lang9\loch\f5
+\{}
+\par \pard\plain \s0\nowidctlpar\hyphpar0\cf0\kerning1\dbch\af6\langfe2052\dbch\af7\afs24\alang1081\loch\f3\fs24\lang16393\sl276\slmult1\sb0\sa200{\rtlch \ltrch\loch\fs22\lang9\loch\f5
+public:}
+\par \pard\plain \s0\nowidctlpar\hyphpar0\cf0\kerning1\dbch\af6\langfe2052\dbch\af7\afs24\alang1081\loch\f3\fs24\lang16393\sl276\slmult1\sb0\sa200{\rtlch \ltrch\loch\fs22\lang9\loch\f5
+\tab node *vertex[20];}
+\par \pard\plain \s0\nowidctlpar\hyphpar0\cf0\kerning1\dbch\af6\langfe2052\dbch\af7\afs24\alang1081\loch\f3\fs24\lang16393\sl276\slmult1\sb0\sa200{\rtlch \ltrch\loch\fs22\lang9\loch\f5
+\tab int directed;}
+\par \pard\plain \s0\nowidctlpar\hyphpar0\cf0\kerning1\dbch\af6\langfe2052\dbch\af7\afs24\alang1081\loch\f3\fs24\lang16393\sl276\slmult1\sb0\sa200{\rtlch \ltrch\loch\fs22\lang9\loch\f5
+\tab int n;}
+\par \pard\plain \s0\nowidctlpar\hyphpar0\cf0\kerning1\dbch\af6\langfe2052\dbch\af7\afs24\alang1081\loch\f3\fs24\lang16393\sl276\slmult1\sb0\sa200{\rtlch \ltrch\loch\fs22\lang9\loch\f5
+\tab void initialize();}
+\par \pard\plain \s0\nowidctlpar\hyphpar0\cf0\kerning1\dbch\af6\langfe2052\dbch\af7\afs24\alang1081\loch\f3\fs24\lang16393\sl276\slmult1\sb0\sa200{\rtlch \ltrch\loch\fs22\lang9\loch\f5
+\tab int check(char []);}
+\par \pard\plain \s0\nowidctlpar\hyphpar0\cf0\kerning1\dbch\af6\langfe2052\dbch\af7\afs24\alang1081\loch\f3\fs24\lang16393\sl276\slmult1\sb0\sa200{\rtlch \ltrch\loch\fs22\lang9\loch\f5
+\tab void create(char[],char[], float );}
+\par \pard\plain \s0\nowidctlpar\hyphpar0\cf0\kerning1\dbch\af6\langfe2052\dbch\af7\afs24\alang1081\loch\f3\fs24\lang16393\sl276\slmult1\sb0\sa200{\rtlch \ltrch\loch\fs22\lang9\loch\f5
+\tab void add_vertex();}
+\par \pard\plain \s0\nowidctlpar\hyphpar0\cf0\kerning1\dbch\af6\langfe2052\dbch\af7\afs24\alang1081\loch\f3\fs24\lang16393\sl276\slmult1\sb0\sa200{\rtlch \ltrch\loch\fs22\lang9\loch\f5
+\tab void delete_vertex();}
+\par \pard\plain \s0\nowidctlpar\hyphpar0\cf0\kerning1\dbch\af6\langfe2052\dbch\af7\afs24\alang1081\loch\f3\fs24\lang16393\sl276\slmult1\sb0\sa200{\rtlch \ltrch\loch\fs22\lang9\loch\f5
+\tab void delete_edge();}
+\par \pard\plain \s0\nowidctlpar\hyphpar0\cf0\kerning1\dbch\af6\langfe2052\dbch\af7\afs24\alang1081\loch\f3\fs24\lang16393\sl276\slmult1\sb0\sa200{\rtlch \ltrch\loch\fs22\lang9\loch\f5
+\tab void display();}
+\par \pard\plain \s0\nowidctlpar\hyphpar0\cf0\kerning1\dbch\af6\langfe2052\dbch\af7\afs24\alang1081\loch\f3\fs24\lang16393\sl276\slmult1\sb0\sa200{\rtlch \ltrch\loch\fs22\lang9\loch\f5
+\tab void indegree_outdegree();}
+\par \pard\plain \s0\nowidctlpar\hyphpar0\cf0\kerning1\dbch\af6\langfe2052\dbch\af7\afs24\alang1081\loch\f3\fs24\lang16393\sl276\slmult1\sb0\sa200{\rtlch \ltrch\loch\fs22\lang9\loch\f5
+\};}
+\par \pard\plain \s0\nowidctlpar\hyphpar0\cf0\kerning1\dbch\af6\langfe2052\dbch\af7\afs24\alang1081\loch\f3\fs24\lang16393\sl276\slmult1\sb0\sa200{\rtlch \ltrch\loch\fs22\lang9\loch\f5
+int graph::check(char tem[30])}
+\par \pard\plain \s0\nowidctlpar\hyphpar0\cf0\kerning1\dbch\af6\langfe2052\dbch\af7\afs24\alang1081\loch\f3\fs24\lang16393\sl276\slmult1\sb0\sa200{\rtlch \ltrch\loch\fs22\lang9\loch\f5
+\{}
+\par \pard\plain \s0\nowidctlpar\hyphpar0\cf0\kerning1\dbch\af6\langfe2052\dbch\af7\afs24\alang1081\loch\f3\fs24\lang16393\sl276\slmult1\sb0\sa200{\rtlch \ltrch\fs22\lang9\loch\f5
+    }{\rtlch \ltrch\loch\fs22\lang9\loch\f5
+int flag=0;}
+\par \pard\plain \s0\nowidctlpar\hyphpar0\cf0\kerning1\dbch\af6\langfe2052\dbch\af7\afs24\alang1081\loch\f3\fs24\lang16393\sl276\slmult1\sb0\sa200{\rtlch \ltrch\fs22\lang9\loch\f5
+    }{\rtlch \ltrch\loch\fs22\lang9\loch\f5
+for(int i=0;i<n;i++)}
+\par \pard\plain \s0\nowidctlpar\hyphpar0\cf0\kerning1\dbch\af6\langfe2052\dbch\af7\afs24\alang1081\loch\f3\fs24\lang16393\sl276\slmult1\sb0\sa200{\rtlch \ltrch\fs22\lang9\loch\f5
+    }{\rtlch \ltrch\loch\fs22\lang9\loch\f5
+\{}
+\par \pard\plain \s0\nowidctlpar\hyphpar0\cf0\kerning1\dbch\af6\langfe2052\dbch\af7\afs24\alang1081\loch\f3\fs24\lang16393\sl276\slmult1\sb0\sa200{\rtlch \ltrch\fs22\lang9\loch\f5
+        }{\rtlch \ltrch\loch\fs22\lang9\loch\f5
+if(strcmp(vertex[i]->name,tem)==0)}
+\par \pard\plain \s0\nowidctlpar\hyphpar0\cf0\kerning1\dbch\af6\langfe2052\dbch\af7\afs24\alang1081\loch\f3\fs24\lang16393\sl276\slmult1\sb0\sa200{\rtlch \ltrch\fs22\lang9\loch\f5
+        }{\rtlch \ltrch\loch\fs22\lang9\loch\f5
+\{}
+\par \pard\plain \s0\nowidctlpar\hyphpar0\cf0\kerning1\dbch\af6\langfe2052\dbch\af7\afs24\alang1081\loch\f3\fs24\lang16393\sl276\slmult1\sb0\sa200{\rtlch \ltrch\fs22\lang9\loch\f5
+            }{\rtlch \ltrch\loch\fs22\lang9\loch\f5
+flag=i;}
+\par \pard\plain \s0\nowidctlpar\hyphpar0\cf0\kerning1\dbch\af6\langfe2052\dbch\af7\afs24\alang1081\loch\f3\fs24\lang16393\sl276\slmult1\sb0\sa200{\rtlch \ltrch\fs22\lang9\loch\f5
+            }{\rtlch \ltrch\loch\fs22\lang9\loch\f5
+break;}
+\par \pard\plain \s0\nowidctlpar\hyphpar0\cf0\kerning1\dbch\af6\langfe2052\dbch\af7\afs24\alang1081\loch\f3\fs24\lang16393\sl276\slmult1\sb0\sa200{\rtlch \ltrch\fs22\lang9\loch\f5
+        }{\rtlch \ltrch\loch\fs22\lang9\loch\f5
+\}}
+\par \pard\plain \s0\nowidctlpar\hyphpar0\cf0\kerning1\dbch\af6\langfe2052\dbch\af7\afs24\alang1081\loch\f3\fs24\lang16393\sl276\slmult1\sb0\sa200{\rtlch \ltrch\fs22\lang9\loch\f5
+    }{\rtlch \ltrch\loch\fs22\lang9\loch\f5
+\}}
+\par \pard\plain \s0\nowidctlpar\hyphpar0\cf0\kerning1\dbch\af6\langfe2052\dbch\af7\afs24\alang1081\loch\f3\fs24\lang16393\sl276\slmult1\sb0\sa200{\rtlch \ltrch\fs22\lang9\loch\f5
+    }{\rtlch \ltrch\loch\fs22\lang9\loch\f5
+if(flag!=-1)}
+\par \pard\plain \s0\nowidctlpar\hyphpar0\cf0\kerning1\dbch\af6\langfe2052\dbch\af7\afs24\alang1081\loch\f3\fs24\lang16393\sl276\slmult1\sb0\sa200{\rtlch \ltrch\fs22\lang9\loch\f5
+        }{\rtlch \ltrch\loch\fs22\lang9\loch\f5
+return flag;}
+\par \pard\plain \s0\nowidctlpar\hyphpar0\cf0\kerning1\dbch\af6\langfe2052\dbch\af7\afs24\alang1081\loch\f3\fs24\lang16393\sl276\slmult1\sb0\sa200{\rtlch \ltrch\fs22\lang9\loch\f5
+    }{\rtlch \ltrch\loch\fs22\lang9\loch\f5
+else}
+\par \pard\plain \s0\nowidctlpar\hyphpar0\cf0\kerning1\dbch\af6\langfe2052\dbch\af7\afs24\alang1081\loch\f3\fs24\lang16393\sl276\slmult1\sb0\sa200{\rtlch \ltrch\fs22\lang9\loch\f5
+        }{\rtlch \ltrch\loch\fs22\lang9\loch\f5
+return -1;}
+\par \pard\plain \s0\nowidctlpar\hyphpar0\cf0\kerning1\dbch\af6\langfe2052\dbch\af7\afs24\alang1081\loch\f3\fs24\lang16393\sl276\slmult1\sb0\sa200{\rtlch \ltrch\loch\fs22\lang9\loch\f5
+\}}
+\par \pard\plain \s0\nowidctlpar\hyphpar0\cf0\kerning1\dbch\af6\langfe2052\dbch\af7\afs24\alang1081\loch\f3\fs24\lang16393\sl276\slmult1\sb0\sa200{\rtlch \ltrch\loch\fs22\lang9\loch\f5
+void graph::initialize()}
+\par \pard\plain \s0\nowidctlpar\hyphpar0\cf0\kerning1\dbch\af6\langfe2052\dbch\af7\afs24\alang1081\loch\f3\fs24\lang16393\sl276\slmult1\sb0\sa200{\rtlch \ltrch\loch\fs22\lang9\loch\f5
+\{}
+\par \pard\plain \s0\nowidctlpar\hyphpar0\cf0\kerning1\dbch\af6\langfe2052\dbch\af7\afs24\alang1081\loch\f3\fs24\lang16393\sl276\slmult1\sb0\sa200\rtlch \ltrch\loch\fs22\lang9\loch\f5
+
+\par \pard\plain \s0\nowidctlpar\hyphpar0\cf0\kerning1\dbch\af6\langfe2052\dbch\af7\afs24\alang1081\loch\f3\fs24\lang16393\sl276\slmult1\sb0\sa200{\rtlch \ltrch\loch\fs22\lang9\loch\f5
+\tab  char nm[30];}
+\par \pard\plain \s0\nowidctlpar\hyphpar0\cf0\kerning1\dbch\af6\langfe2052\dbch\af7\afs24\alang1081\loch\f3\fs24\lang16393\sl276\slmult1\sb0\sa200{\rtlch \ltrch\loch\fs22\lang9\loch\f5
+\tab char ch;}
+\par \pard\plain \s0\nowidctlpar\hyphpar0\cf0\kerning1\dbch\af6\langfe2052\dbch\af7\afs24\alang1081\loch\f3\fs24\lang16393\sl276\slmult1\sb0\sa200{\rtlch \ltrch\loch\fs22\lang9\loch\f5
+\tab cout<<"\\nIs this directed Graph?(y/n)";}
+\par \pard\plain \s0\nowidctlpar\hyphpar0\cf0\kerning1\dbch\af6\langfe2052\dbch\af7\afs24\alang1081\loch\f3\fs24\lang16393\sl276\slmult1\sb0\sa200{\rtlch \ltrch\loch\fs22\lang9\loch\f5
+\tab cin>>ch;}
+\par \pard\plain \s0\nowidctlpar\hyphpar0\cf0\kerning1\dbch\af6\langfe2052\dbch\af7\afs24\alang1081\loch\f3\fs24\lang16393\sl276\slmult1\sb0\sa200{\rtlch \ltrch\loch\fs22\lang9\loch\f5
+\tab if(ch=='y')}
+\par \pard\plain \s0\nowidctlpar\hyphpar0\cf0\kerning1\dbch\af6\langfe2052\dbch\af7\afs24\alang1081\loch\f3\fs24\lang16393\sl276\slmult1\sb0\sa200{\rtlch \ltrch\loch\fs22\lang9\loch\f5
+\tab \{}
+\par \pard\plain \s0\nowidctlpar\hyphpar0\cf0\kerning1\dbch\af6\langfe2052\dbch\af7\afs24\alang1081\loch\f3\fs24\lang16393\sl276\slmult1\sb0\sa200{\rtlch \ltrch\loch\fs22\lang9\loch\f5
+\tab \tab directed=1;}
+\par \pard\plain \s0\nowidctlpar\hyphpar0\cf0\kerning1\dbch\af6\langfe2052\dbch\af7\afs24\alang1081\loch\f3\fs24\lang16393\sl276\slmult1\sb0\sa200{\rtlch \ltrch\loch\fs22\lang9\loch\f5
+\tab \}}
+\par \pard\plain \s0\nowidctlpar\hyphpar0\cf0\kerning1\dbch\af6\langfe2052\dbch\af7\afs24\alang1081\loch\f3\fs24\lang16393\sl276\slmult1\sb0\sa200{\rtlch \ltrch\loch\fs22\lang9\loch\f5
+\tab else}
+\par \pard\plain \s0\nowidctlpar\hyphpar0\cf0\kerning1\dbch\af6\langfe2052\dbch\af7\afs24\alang1081\loch\f3\fs24\lang16393\sl276\slmult1\sb0\sa200{\rtlch \ltrch\loch\fs22\lang9\loch\f5
+\tab \{}
+\par \pard\plain \s0\nowidctlpar\hyphpar0\cf0\kerning1\dbch\af6\langfe2052\dbch\af7\afs24\alang1081\loch\f3\fs24\lang16393\sl276\slmult1\sb0\sa200{\rtlch \ltrch\loch\fs22\lang9\loch\f5
+\tab \tab directed=0;}
+\par \pard\plain \s0\nowidctlpar\hyphpar0\cf0\kerning1\dbch\af6\langfe2052\dbch\af7\afs24\alang1081\loch\f3\fs24\lang16393\sl276\slmult1\sb0\sa200{\rtlch \ltrch\loch\fs22\lang9\loch\f5
+\tab \}}
+\par \pard\plain \s0\nowidctlpar\hyphpar0\cf0\kerning1\dbch\af6\langfe2052\dbch\af7\afs24\alang1081\loch\f3\fs24\lang16393\sl276\slmult1\sb0\sa200{\rtlch \ltrch\loch\fs22\lang9\loch\f5
+\tab for(int i=0;i<20;i++)}
+\par \pard\plain \s0\nowidctlpar\hyphpar0\cf0\kerning1\dbch\af6\langfe2052\dbch\af7\afs24\alang1081\loch\f3\fs24\lang16393\sl276\slmult1\sb0\sa200{\rtlch \ltrch\loch\fs22\lang9\loch\f5
+\tab \{}
+\par \pard\plain \s0\nowidctlpar\hyphpar0\cf0\kerning1\dbch\af6\langfe2052\dbch\af7\afs24\alang1081\loch\f3\fs24\lang16393\sl276\slmult1\sb0\sa200{\rtlch \ltrch\loch\fs22\lang9\loch\f5
+\tab \tab vertex[i]=NULL;}
+\par \pard\plain \s0\nowidctlpar\hyphpar0\cf0\kerning1\dbch\af6\langfe2052\dbch\af7\afs24\alang1081\loch\f3\fs24\lang16393\sl276\slmult1\sb0\sa200{\rtlch \ltrch\loch\fs22\lang9\loch\f5
+\tab \}}
+\par \pard\plain \s0\nowidctlpar\hyphpar0\cf0\kerning1\dbch\af6\langfe2052\dbch\af7\afs24\alang1081\loch\f3\fs24\lang16393\sl276\slmult1\sb0\sa200{\rtlch \ltrch\loch\fs22\lang9\loch\f5
+\tab cout<<"\\nEnter no of cities-: ";}
+\par \pard\plain \s0\nowidctlpar\hyphpar0\cf0\kerning1\dbch\af6\langfe2052\dbch\af7\afs24\alang1081\loch\f3\fs24\lang16393\sl276\slmult1\sb0\sa200{\rtlch \ltrch\loch\fs22\lang9\loch\f5
+\tab cin>>n;}
+\par \pard\plain \s0\nowidctlpar\hyphpar0\cf0\kerning1\dbch\af6\langfe2052\dbch\af7\afs24\alang1081\loch\f3\fs24\lang16393\sl276\slmult1\sb0\sa200\rtlch \ltrch\loch\fs22\lang9\loch\f5
+
+\par \pard\plain \s0\nowidctlpar\hyphpar0\cf0\kerning1\dbch\af6\langfe2052\dbch\af7\afs24\alang1081\loch\f3\fs24\lang16393\sl276\slmult1\sb0\sa200{\rtlch \ltrch\loch\fs22\lang9\loch\f5
+\tab cout<<"\\nEnter name of each city-:";}
+\par \pard\plain \s0\nowidctlpar\hyphpar0\cf0\kerning1\dbch\af6\langfe2052\dbch\af7\afs24\alang1081\loch\f3\fs24\lang16393\sl276\slmult1\sb0\sa200{\rtlch \ltrch\loch\fs22\lang9\loch\f5
+\tab for(int j=0;j<n;j++)}
+\par \pard\plain \s0\nowidctlpar\hyphpar0\cf0\kerning1\dbch\af6\langfe2052\dbch\af7\afs24\alang1081\loch\f3\fs24\lang16393\sl276\slmult1\sb0\sa200{\rtlch \ltrch\loch\fs22\lang9\loch\f5
+\tab \{}
+\par \pard\plain \s0\nowidctlpar\hyphpar0\cf0\kerning1\dbch\af6\langfe2052\dbch\af7\afs24\alang1081\loch\f3\fs24\lang16393\sl276\slmult1\sb0\sa200{\rtlch \ltrch\loch\fs22\lang9\loch\f5
+\tab     cin>>nm;}
+\par \pard\plain \s0\nowidctlpar\hyphpar0\cf0\kerning1\dbch\af6\langfe2052\dbch\af7\afs24\alang1081\loch\f3\fs24\lang16393\sl276\slmult1\sb0\sa200{\rtlch \ltrch\loch\fs22\lang9\loch\f5
+\tab     node *temp = new node(0);}
+\par \pard\plain \s0\nowidctlpar\hyphpar0\cf0\kerning1\dbch\af6\langfe2052\dbch\af7\afs24\alang1081\loch\f3\fs24\lang16393\sl276\slmult1\sb0\sa200{\rtlch \ltrch\loch\fs22\lang9\loch\f5
+\tab     strcpy(temp->name,nm);}
+\par \pard\plain \s0\nowidctlpar\hyphpar0\cf0\kerning1\dbch\af6\langfe2052\dbch\af7\afs24\alang1081\loch\f3\fs24\lang16393\sl276\slmult1\sb0\sa200\rtlch \ltrch\loch\fs22\lang9\loch\f5
+
+\par \pard\plain \s0\nowidctlpar\hyphpar0\cf0\kerning1\dbch\af6\langfe2052\dbch\af7\afs24\alang1081\loch\f3\fs24\lang16393\sl276\slmult1\sb0\sa200{\rtlch \ltrch\loch\fs22\lang9\loch\f5
+\tab \tab if(vertex[j]==NULL)}
+\par \pard\plain \s0\nowidctlpar\hyphpar0\cf0\kerning1\dbch\af6\langfe2052\dbch\af7\afs24\alang1081\loch\f3\fs24\lang16393\sl276\slmult1\sb0\sa200{\rtlch \ltrch\fs22\lang9\loch\f5
+        }{\rtlch \ltrch\loch\fs22\lang9\loch\f5
+\{}
+\par \pard\plain \s0\nowidctlpar\hyphpar0\cf0\kerning1\dbch\af6\langfe2052\dbch\af7\afs24\alang1081\loch\f3\fs24\lang16393\sl276\slmult1\sb0\sa200{\rtlch \ltrch\fs22\lang9\loch\f5
+            }{\rtlch \ltrch\loch\fs22\lang9\loch\f5
+vertex[j]=temp;}
+\par \pard\plain \s0\nowidctlpar\hyphpar0\cf0\kerning1\dbch\af6\langfe2052\dbch\af7\afs24\alang1081\loch\f3\fs24\lang16393\sl276\slmult1\sb0\sa200{\rtlch \ltrch\fs22\lang9\loch\f5
+            }{\rtlch \ltrch\loch\fs22\lang9\loch\f5
+vertex[j]->next = NULL;}
+\par \pard\plain \s0\nowidctlpar\hyphpar0\cf0\kerning1\dbch\af6\langfe2052\dbch\af7\afs24\alang1081\loch\f3\fs24\lang16393\sl276\slmult1\sb0\sa200{\rtlch \ltrch\fs22\lang9\loch\f5
+        }{\rtlch \ltrch\loch\fs22\lang9\loch\f5
+\}}
+\par \pard\plain \s0\nowidctlpar\hyphpar0\cf0\kerning1\dbch\af6\langfe2052\dbch\af7\afs24\alang1081\loch\f3\fs24\lang16393\sl276\slmult1\sb0\sa200\rtlch \ltrch\loch\fs22\lang9\loch\f5
+
+\par \pard\plain \s0\nowidctlpar\hyphpar0\cf0\kerning1\dbch\af6\langfe2052\dbch\af7\afs24\alang1081\loch\f3\fs24\lang16393\sl276\slmult1\sb0\sa200{\rtlch \ltrch\fs22\lang9\loch\f5
+    }{\rtlch \ltrch\loch\fs22\lang9\loch\f5
+\}}
+\par \pard\plain \s0\nowidctlpar\hyphpar0\cf0\kerning1\dbch\af6\langfe2052\dbch\af7\afs24\alang1081\loch\f3\fs24\lang16393\sl276\slmult1\sb0\sa200{\rtlch \ltrch\loch\fs22\lang9\loch\f5
+\}}
+\par \pard\plain \s0\nowidctlpar\hyphpar0\cf0\kerning1\dbch\af6\langfe2052\dbch\af7\afs24\alang1081\loch\f3\fs24\lang16393\sl276\slmult1\sb0\sa200\rtlch \ltrch\loch\fs22\lang9\loch\f5
+
+\par \pard\plain \s0\nowidctlpar\hyphpar0\cf0\kerning1\dbch\af6\langfe2052\dbch\af7\afs24\alang1081\loch\f3\fs24\lang16393\sl276\slmult1\sb0\sa200{\rtlch \ltrch\loch\fs22\lang9\loch\f5
+void graph::create(char nam[30],char ver[30], float weig)//nam=final vertex, ver=initial vertex}
+\par \pard\plain \s0\nowidctlpar\hyphpar0\cf0\kerning1\dbch\af6\langfe2052\dbch\af7\afs24\alang1081\loch\f3\fs24\lang16393\sl276\slmult1\sb0\sa200{\rtlch \ltrch\loch\fs22\lang9\loch\f5
+\{}
+\par \pard\plain \s0\nowidctlpar\hyphpar0\cf0\kerning1\dbch\af6\langfe2052\dbch\af7\afs24\alang1081\loch\f3\fs24\lang16393\sl276\slmult1\sb0\sa200{\rtlch \ltrch\loch\fs22\lang9\loch\f5
+\tab int flag=0;}
+\par \pard\plain \s0\nowidctlpar\hyphpar0\cf0\kerning1\dbch\af6\langfe2052\dbch\af7\afs24\alang1081\loch\f3\fs24\lang16393\sl276\slmult1\sb0\sa200{\rtlch \ltrch\loch\fs22\lang9\loch\f5
+\tab for(int i=0;i<n;i++)}
+\par \pard\plain \s0\nowidctlpar\hyphpar0\cf0\kerning1\dbch\af6\langfe2052\dbch\af7\afs24\alang1081\loch\f3\fs24\lang16393\sl276\slmult1\sb0\sa200{\rtlch \ltrch\loch\fs22\lang9\loch\f5
+\tab \{}
+\par \pard\plain \s0\nowidctlpar\hyphpar0\cf0\kerning1\dbch\af6\langfe2052\dbch\af7\afs24\alang1081\loch\f3\fs24\lang16393\sl276\slmult1\sb0\sa200{\rtlch \ltrch\loch\fs22\lang9\loch\f5
+\tab   if(directed==1)//For Directed Graph}
+\par \pard\plain \s0\nowidctlpar\hyphpar0\cf0\kerning1\dbch\af6\langfe2052\dbch\af7\afs24\alang1081\loch\f3\fs24\lang16393\sl276\slmult1\sb0\sa200{\rtlch \ltrch\loch\fs22\lang9\loch\f5
+\tab    \{}
+\par \pard\plain \s0\nowidctlpar\hyphpar0\cf0\kerning1\dbch\af6\langfe2052\dbch\af7\afs24\alang1081\loch\f3\fs24\lang16393\sl276\slmult1\sb0\sa200{\rtlch \ltrch\loch\fs22\lang9\loch\f5
+\tab \tab if(strcmp(vertex[i]->name,ver)==0)}
+\par \pard\plain \s0\nowidctlpar\hyphpar0\cf0\kerning1\dbch\af6\langfe2052\dbch\af7\afs24\alang1081\loch\f3\fs24\lang16393\sl276\slmult1\sb0\sa200{\rtlch \ltrch\loch\fs22\lang9\loch\f5
+\tab \tab \{}
+\par \pard\plain \s0\nowidctlpar\hyphpar0\cf0\kerning1\dbch\af6\langfe2052\dbch\af7\afs24\alang1081\loch\f3\fs24\lang16393\sl276\slmult1\sb0\sa200{\rtlch \ltrch\loch\fs22\lang9\loch\f5
+\tab \tab     node *p=new node(weig);}
+\par \pard\plain \s0\nowidctlpar\hyphpar0\cf0\kerning1\dbch\af6\langfe2052\dbch\af7\afs24\alang1081\loch\f3\fs24\lang16393\sl276\slmult1\sb0\sa200{\rtlch \ltrch\loch\fs22\lang9\loch\f5
+\tab \tab \tab strcpy(p->name,nam);}
+\par \pard\plain \s0\nowidctlpar\hyphpar0\cf0\kerning1\dbch\af6\langfe2052\dbch\af7\afs24\alang1081\loch\f3\fs24\lang16393\sl276\slmult1\sb0\sa200{\rtlch \ltrch\loch\fs22\lang9\loch\f5
+\tab \tab \tab node *temp=vertex[i];}
+\par \pard\plain \s0\nowidctlpar\hyphpar0\cf0\kerning1\dbch\af6\langfe2052\dbch\af7\afs24\alang1081\loch\f3\fs24\lang16393\sl276\slmult1\sb0\sa200{\rtlch \ltrch\loch\fs22\lang9\loch\f5
+\tab \tab \tab while(temp->next!=NULL)}
+\par \pard\plain \s0\nowidctlpar\hyphpar0\cf0\kerning1\dbch\af6\langfe2052\dbch\af7\afs24\alang1081\loch\f3\fs24\lang16393\sl276\slmult1\sb0\sa200{\rtlch \ltrch\loch\fs22\lang9\loch\f5
+\tab \tab \tab \{}
+\par \pard\plain \s0\nowidctlpar\hyphpar0\cf0\kerning1\dbch\af6\langfe2052\dbch\af7\afs24\alang1081\loch\f3\fs24\lang16393\sl276\slmult1\sb0\sa200{\rtlch \ltrch\loch\fs22\lang9\loch\f5
+\tab \tab \tab \tab temp=temp->next;}
+\par \pard\plain \s0\nowidctlpar\hyphpar0\cf0\kerning1\dbch\af6\langfe2052\dbch\af7\afs24\alang1081\loch\f3\fs24\lang16393\sl276\slmult1\sb0\sa200{\rtlch \ltrch\loch\fs22\lang9\loch\f5
+\tab \tab \tab \}}
+\par \pard\plain \s0\nowidctlpar\hyphpar0\cf0\kerning1\dbch\af6\langfe2052\dbch\af7\afs24\alang1081\loch\f3\fs24\lang16393\sl276\slmult1\sb0\sa200{\rtlch \ltrch\loch\fs22\lang9\loch\f5
+\tab \tab \tab temp->next=p;}
+\par \pard\plain \s0\nowidctlpar\hyphpar0\cf0\kerning1\dbch\af6\langfe2052\dbch\af7\afs24\alang1081\loch\f3\fs24\lang16393\sl276\slmult1\sb0\sa200{\rtlch \ltrch\loch\fs22\lang9\loch\f5
+\tab \tab \tab flag=1;}
+\par \pard\plain \s0\nowidctlpar\hyphpar0\cf0\kerning1\dbch\af6\langfe2052\dbch\af7\afs24\alang1081\loch\f3\fs24\lang16393\sl276\slmult1\sb0\sa200{\rtlch \ltrch\loch\fs22\lang9\loch\f5
+\tab \tab \tab break;}
+\par \pard\plain \s0\nowidctlpar\hyphpar0\cf0\kerning1\dbch\af6\langfe2052\dbch\af7\afs24\alang1081\loch\f3\fs24\lang16393\sl276\slmult1\sb0\sa200\rtlch \ltrch\loch\fs22\lang9\loch\f5
+
+\par \pard\plain \s0\nowidctlpar\hyphpar0\cf0\kerning1\dbch\af6\langfe2052\dbch\af7\afs24\alang1081\loch\f3\fs24\lang16393\sl276\slmult1\sb0\sa200{\rtlch \ltrch\loch\fs22\lang9\loch\f5
+\tab \tab \}}
+\par \pard\plain \s0\nowidctlpar\hyphpar0\cf0\kerning1\dbch\af6\langfe2052\dbch\af7\afs24\alang1081\loch\f3\fs24\lang16393\sl276\slmult1\sb0\sa200{\rtlch \ltrch\loch\fs22\lang9\loch\f5
+\tab   \}}
+\par \pard\plain \s0\nowidctlpar\hyphpar0\cf0\kerning1\dbch\af6\langfe2052\dbch\af7\afs24\alang1081\loch\f3\fs24\lang16393\sl276\slmult1\sb0\sa200\rtlch \ltrch\loch\fs22\lang9\loch\f5
+
+\par \pard\plain \s0\nowidctlpar\hyphpar0\cf0\kerning1\dbch\af6\langfe2052\dbch\af7\afs24\alang1081\loch\f3\fs24\lang16393\sl276\slmult1\sb0\sa200{\rtlch \ltrch\loch\fs22\lang9\loch\f5
+\tab  if(directed==0)//For undirected Graph}
+\par \pard\plain \s0\nowidctlpar\hyphpar0\cf0\kerning1\dbch\af6\langfe2052\dbch\af7\afs24\alang1081\loch\f3\fs24\lang16393\sl276\slmult1\sb0\sa200{\rtlch \ltrch\loch\fs22\lang9\loch\f5
+\tab   \{}
+\par \pard\plain \s0\nowidctlpar\hyphpar0\cf0\kerning1\dbch\af6\langfe2052\dbch\af7\afs24\alang1081\loch\f3\fs24\lang16393\sl276\slmult1\sb0\sa200{\rtlch \ltrch\loch\fs22\lang9\loch\f5
+\tab \tab \tab if(strcmp(vertex[i]->name,ver)==0)//a->b}
+\par \pard\plain \s0\nowidctlpar\hyphpar0\cf0\kerning1\dbch\af6\langfe2052\dbch\af7\afs24\alang1081\loch\f3\fs24\lang16393\sl276\slmult1\sb0\sa200{\rtlch \ltrch\loch\fs22\lang9\loch\f5
+\tab \tab \tab \{}
+\par \pard\plain \s0\nowidctlpar\hyphpar0\cf0\kerning1\dbch\af6\langfe2052\dbch\af7\afs24\alang1081\loch\f3\fs24\lang16393\sl276\slmult1\sb0\sa200{\rtlch \ltrch\loch\fs22\lang9\loch\f5
+\tab \tab \tab     //cout<<"\\nTest";}
+\par \pard\plain \s0\nowidctlpar\hyphpar0\cf0\kerning1\dbch\af6\langfe2052\dbch\af7\afs24\alang1081\loch\f3\fs24\lang16393\sl276\slmult1\sb0\sa200{\rtlch \ltrch\loch\fs22\lang9\loch\f5
+\tab \tab \tab     node *p=new node(weig);}
+\par \pard\plain \s0\nowidctlpar\hyphpar0\cf0\kerning1\dbch\af6\langfe2052\dbch\af7\afs24\alang1081\loch\f3\fs24\lang16393\sl276\slmult1\sb0\sa200{\rtlch \ltrch\fs22\lang9\loch\f5
+                }{\rtlch \ltrch\loch\fs22\lang9\loch\f5
+strcpy(p->name,nam);}
+\par \pard\plain \s0\nowidctlpar\hyphpar0\cf0\kerning1\dbch\af6\langfe2052\dbch\af7\afs24\alang1081\loch\f3\fs24\lang16393\sl276\slmult1\sb0\sa200{\rtlch \ltrch\loch\fs22\lang9\loch\f5
+\tab \tab \tab \tab node *temp=vertex[i];}
+\par \pard\plain \s0\nowidctlpar\hyphpar0\cf0\kerning1\dbch\af6\langfe2052\dbch\af7\afs24\alang1081\loch\f3\fs24\lang16393\sl276\slmult1\sb0\sa200{\rtlch \ltrch\loch\fs22\lang9\loch\f5
+\tab \tab \tab \tab while(temp->next!=NULL)}
+\par \pard\plain \s0\nowidctlpar\hyphpar0\cf0\kerning1\dbch\af6\langfe2052\dbch\af7\afs24\alang1081\loch\f3\fs24\lang16393\sl276\slmult1\sb0\sa200{\rtlch \ltrch\loch\fs22\lang9\loch\f5
+\tab \tab \tab \tab  \{}
+\par \pard\plain \s0\nowidctlpar\hyphpar0\cf0\kerning1\dbch\af6\langfe2052\dbch\af7\afs24\alang1081\loch\f3\fs24\lang16393\sl276\slmult1\sb0\sa200{\rtlch \ltrch\loch\fs22\lang9\loch\f5
+\tab \tab \tab \tab \tab temp=temp->next;}
+\par \pard\plain \s0\nowidctlpar\hyphpar0\cf0\kerning1\dbch\af6\langfe2052\dbch\af7\afs24\alang1081\loch\f3\fs24\lang16393\sl276\slmult1\sb0\sa200{\rtlch \ltrch\loch\fs22\lang9\loch\f5
+\tab \tab \tab \tab  \}}
+\par \pard\plain \s0\nowidctlpar\hyphpar0\cf0\kerning1\dbch\af6\langfe2052\dbch\af7\afs24\alang1081\loch\f3\fs24\lang16393\sl276\slmult1\sb0\sa200{\rtlch \ltrch\loch\fs22\lang9\loch\f5
+\tab \tab \tab \tab \tab temp->next=p;}
+\par \pard\plain \s0\nowidctlpar\hyphpar0\cf0\kerning1\dbch\af6\langfe2052\dbch\af7\afs24\alang1081\loch\f3\fs24\lang16393\sl276\slmult1\sb0\sa200{\rtlch \ltrch\loch\fs22\lang9\loch\f5
+\tab \tab \tab \tab \tab flag=1;}
+\par \pard\plain \s0\nowidctlpar\hyphpar0\cf0\kerning1\dbch\af6\langfe2052\dbch\af7\afs24\alang1081\loch\f3\fs24\lang16393\sl276\slmult1\sb0\sa200{\rtlch \ltrch\loch\fs22\lang9\loch\f5
+\tab \tab \tab \}}
+\par \pard\plain \s0\nowidctlpar\hyphpar0\cf0\kerning1\dbch\af6\langfe2052\dbch\af7\afs24\alang1081\loch\f3\fs24\lang16393\sl276\slmult1\sb0\sa200\rtlch \ltrch\loch\fs22\lang9\loch\f5
+
+\par \pard\plain \s0\nowidctlpar\hyphpar0\cf0\kerning1\dbch\af6\langfe2052\dbch\af7\afs24\alang1081\loch\f3\fs24\lang16393\sl276\slmult1\sb0\sa200{\rtlch \ltrch\loch\fs22\lang9\loch\f5
+\tab \tab \tab if(strcmp(vertex[i]->name,nam)==0)//b->a}
+\par \pard\plain \s0\nowidctlpar\hyphpar0\cf0\kerning1\dbch\af6\langfe2052\dbch\af7\afs24\alang1081\loch\f3\fs24\lang16393\sl276\slmult1\sb0\sa200{\rtlch \ltrch\loch\fs22\lang9\loch\f5
+\tab \tab \tab \{}
+\par \pard\plain \s0\nowidctlpar\hyphpar0\cf0\kerning1\dbch\af6\langfe2052\dbch\af7\afs24\alang1081\loch\f3\fs24\lang16393\sl276\slmult1\sb0\sa200{\rtlch \ltrch\loch\fs22\lang9\loch\f5
+\tab \tab \tab     node *p=new node(weig);}
+\par \pard\plain \s0\nowidctlpar\hyphpar0\cf0\kerning1\dbch\af6\langfe2052\dbch\af7\afs24\alang1081\loch\f3\fs24\lang16393\sl276\slmult1\sb0\sa200{\rtlch \ltrch\loch\fs22\lang9\loch\f5
+\tab \tab \tab \tab strcpy(p->name,ver);}
+\par \pard\plain \s0\nowidctlpar\hyphpar0\cf0\kerning1\dbch\af6\langfe2052\dbch\af7\afs24\alang1081\loch\f3\fs24\lang16393\sl276\slmult1\sb0\sa200{\rtlch \ltrch\loch\fs22\lang9\loch\f5
+\tab \tab \tab \tab node *temp=vertex[i];}
+\par \pard\plain \s0\nowidctlpar\hyphpar0\cf0\kerning1\dbch\af6\langfe2052\dbch\af7\afs24\alang1081\loch\f3\fs24\lang16393\sl276\slmult1\sb0\sa200{\rtlch \ltrch\loch\fs22\lang9\loch\f5
+\tab \tab \tab \tab while(temp->next!=NULL)}
+\par \pard\plain \s0\nowidctlpar\hyphpar0\cf0\kerning1\dbch\af6\langfe2052\dbch\af7\afs24\alang1081\loch\f3\fs24\lang16393\sl276\slmult1\sb0\sa200{\rtlch \ltrch\loch\fs22\lang9\loch\f5
+\tab \tab \tab \tab \{}
+\par \pard\plain \s0\nowidctlpar\hyphpar0\cf0\kerning1\dbch\af6\langfe2052\dbch\af7\afs24\alang1081\loch\f3\fs24\lang16393\sl276\slmult1\sb0\sa200{\rtlch \ltrch\loch\fs22\lang9\loch\f5
+\tab \tab \tab \tab \tab temp=temp->next;}
+\par \pard\plain \s0\nowidctlpar\hyphpar0\cf0\kerning1\dbch\af6\langfe2052\dbch\af7\afs24\alang1081\loch\f3\fs24\lang16393\sl276\slmult1\sb0\sa200{\rtlch \ltrch\loch\fs22\lang9\loch\f5
+\tab \tab \tab \tab \}}
+\par \pard\plain \s0\nowidctlpar\hyphpar0\cf0\kerning1\dbch\af6\langfe2052\dbch\af7\afs24\alang1081\loch\f3\fs24\lang16393\sl276\slmult1\sb0\sa200{\rtlch \ltrch\loch\fs22\lang9\loch\f5
+\tab \tab \tab \tab temp->next=p;}
+\par \pard\plain \s0\nowidctlpar\hyphpar0\cf0\kerning1\dbch\af6\langfe2052\dbch\af7\afs24\alang1081\loch\f3\fs24\lang16393\sl276\slmult1\sb0\sa200{\rtlch \ltrch\loch\fs22\lang9\loch\f5
+\tab \tab \tab \tab flag=1;}
+\par \pard\plain \s0\nowidctlpar\hyphpar0\cf0\kerning1\dbch\af6\langfe2052\dbch\af7\afs24\alang1081\loch\f3\fs24\lang16393\sl276\slmult1\sb0\sa200{\rtlch \ltrch\loch\fs22\lang9\loch\f5
+\tab \tab \tab \}}
+\par \pard\plain \s0\nowidctlpar\hyphpar0\cf0\kerning1\dbch\af6\langfe2052\dbch\af7\afs24\alang1081\loch\f3\fs24\lang16393\sl276\slmult1\sb0\sa200{\rtlch \ltrch\loch\fs22\lang9\loch\f5
+\tab   \}}
+\par \pard\plain \s0\nowidctlpar\hyphpar0\cf0\kerning1\dbch\af6\langfe2052\dbch\af7\afs24\alang1081\loch\f3\fs24\lang16393\sl276\slmult1\sb0\sa200\rtlch \ltrch\loch\fs22\lang9\loch\f5
+
+\par \pard\plain \s0\nowidctlpar\hyphpar0\cf0\kerning1\dbch\af6\langfe2052\dbch\af7\afs24\alang1081\loch\f3\fs24\lang16393\sl276\slmult1\sb0\sa200{\rtlch \ltrch\loch\fs22\lang9\loch\f5
+\tab \}}
+\par \pard\plain \s0\nowidctlpar\hyphpar0\cf0\kerning1\dbch\af6\langfe2052\dbch\af7\afs24\alang1081\loch\f3\fs24\lang16393\sl276\slmult1\sb0\sa200\rtlch \ltrch\loch\fs22\lang9\loch\f5
+
+\par \pard\plain \s0\nowidctlpar\hyphpar0\cf0\kerning1\dbch\af6\langfe2052\dbch\af7\afs24\alang1081\loch\f3\fs24\lang16393\sl276\slmult1\sb0\sa200{\rtlch \ltrch\loch\fs22\lang9\loch\f5
+\tab if(flag==0)}
+\par \pard\plain \s0\nowidctlpar\hyphpar0\cf0\kerning1\dbch\af6\langfe2052\dbch\af7\afs24\alang1081\loch\f3\fs24\lang16393\sl276\slmult1\sb0\sa200{\rtlch \ltrch\loch\fs22\lang9\loch\f5
+\tab \{}
+\par \pard\plain \s0\nowidctlpar\hyphpar0\cf0\kerning1\dbch\af6\langfe2052\dbch\af7\afs24\alang1081\loch\f3\fs24\lang16393\sl276\slmult1\sb0\sa200{\rtlch \ltrch\loch\fs22\lang9\loch\f5
+\tab \tab cout<<"\\nEnter valid City name!!";}
+\par \pard\plain \s0\nowidctlpar\hyphpar0\cf0\kerning1\dbch\af6\langfe2052\dbch\af7\afs24\alang1081\loch\f3\fs24\lang16393\sl276\slmult1\sb0\sa200{\rtlch \ltrch\loch\fs22\lang9\loch\f5
+\tab \}}
+\par \pard\plain \s0\nowidctlpar\hyphpar0\cf0\kerning1\dbch\af6\langfe2052\dbch\af7\afs24\alang1081\loch\f3\fs24\lang16393\sl276\slmult1\sb0\sa200{\rtlch \ltrch\loch\fs22\lang9\loch\f5
+\}}
+\par \pard\plain \s0\nowidctlpar\hyphpar0\cf0\kerning1\dbch\af6\langfe2052\dbch\af7\afs24\alang1081\loch\f3\fs24\lang16393\sl276\slmult1\sb0\sa200\rtlch \ltrch\loch\fs22\lang9\loch\f5
+
+\par \pard\plain \s0\nowidctlpar\hyphpar0\cf0\kerning1\dbch\af6\langfe2052\dbch\af7\afs24\alang1081\loch\f3\fs24\lang16393\sl276\slmult1\sb0\sa200{\rtlch \ltrch\loch\fs22\lang9\loch\f5
+void graph::display()}
+\par \pard\plain \s0\nowidctlpar\hyphpar0\cf0\kerning1\dbch\af6\langfe2052\dbch\af7\afs24\alang1081\loch\f3\fs24\lang16393\sl276\slmult1\sb0\sa200{\rtlch \ltrch\loch\fs22\lang9\loch\f5
+\{}
+\par \pard\plain \s0\nowidctlpar\hyphpar0\cf0\kerning1\dbch\af6\langfe2052\dbch\af7\afs24\alang1081\loch\f3\fs24\lang16393\sl276\slmult1\sb0\sa200{\rtlch \ltrch\loch\fs22\lang9\loch\f5
+\tab cout<<"\\nGraph of path using Adjacency List is-: ";}
+\par \pard\plain \s0\nowidctlpar\hyphpar0\cf0\kerning1\dbch\af6\langfe2052\dbch\af7\afs24\alang1081\loch\f3\fs24\lang16393\sl276\slmult1\sb0\sa200{\rtlch \ltrch\loch\fs22\lang9\loch\f5
+\tab cout<<"\\n==========================================================";}
+\par \pard\plain \s0\nowidctlpar\hyphpar0\cf0\kerning1\dbch\af6\langfe2052\dbch\af7\afs24\alang1081\loch\f3\fs24\lang16393\sl276\slmult1\sb0\sa200{\rtlch \ltrch\loch\fs22\lang9\loch\f5
+\tab for(int i=0;i<n;i++)}
+\par \pard\plain \s0\nowidctlpar\hyphpar0\cf0\kerning1\dbch\af6\langfe2052\dbch\af7\afs24\alang1081\loch\f3\fs24\lang16393\sl276\slmult1\sb0\sa200{\rtlch \ltrch\loch\fs22\lang9\loch\f5
+\tab \{}
+\par \pard\plain \s0\nowidctlpar\hyphpar0\cf0\kerning1\dbch\af6\langfe2052\dbch\af7\afs24\alang1081\loch\f3\fs24\lang16393\sl276\slmult1\sb0\sa200{\rtlch \ltrch\loch\fs22\lang9\loch\f5
+\tab \tab node *temp=vertex[i];}
+\par \pard\plain \s0\nowidctlpar\hyphpar0\cf0\kerning1\dbch\af6\langfe2052\dbch\af7\afs24\alang1081\loch\f3\fs24\lang16393\sl276\slmult1\sb0\sa200{\rtlch \ltrch\loch\fs22\lang9\loch\f5
+\tab \tab cout<<"\\n["<<vertex[i]->name<<", "<<vertex[i]->weight<<"]";}
+\par \pard\plain \s0\nowidctlpar\hyphpar0\cf0\kerning1\dbch\af6\langfe2052\dbch\af7\afs24\alang1081\loch\f3\fs24\lang16393\sl276\slmult1\sb0\sa200{\rtlch \ltrch\loch\fs22\lang9\loch\f5
+\tab \tab while(temp->next!=NULL)}
+\par \pard\plain \s0\nowidctlpar\hyphpar0\cf0\kerning1\dbch\af6\langfe2052\dbch\af7\afs24\alang1081\loch\f3\fs24\lang16393\sl276\slmult1\sb0\sa200{\rtlch \ltrch\loch\fs22\lang9\loch\f5
+\tab \tab \{}
+\par \pard\plain \s0\nowidctlpar\hyphpar0\cf0\kerning1\dbch\af6\langfe2052\dbch\af7\afs24\alang1081\loch\f3\fs24\lang16393\sl276\slmult1\sb0\sa200{\rtlch \ltrch\loch\fs22\lang9\loch\f5
+\tab \tab     temp=temp->next;}
+\par \pard\plain \s0\nowidctlpar\hyphpar0\cf0\kerning1\dbch\af6\langfe2052\dbch\af7\afs24\alang1081\loch\f3\fs24\lang16393\sl276\slmult1\sb0\sa200{\rtlch \ltrch\loch\fs22\lang9\loch\f5
+\tab \tab \tab cout<<"->["<<temp->name<<", "<<temp->weight<<"]";}
+\par \pard\plain \s0\nowidctlpar\hyphpar0\cf0\kerning1\dbch\af6\langfe2052\dbch\af7\afs24\alang1081\loch\f3\fs24\lang16393\sl276\slmult1\sb0\sa200\rtlch \ltrch\loch\fs22\lang9\loch\f5
+
+\par \pard\plain \s0\nowidctlpar\hyphpar0\cf0\kerning1\dbch\af6\langfe2052\dbch\af7\afs24\alang1081\loch\f3\fs24\lang16393\sl276\slmult1\sb0\sa200{\rtlch \ltrch\loch\fs22\lang9\loch\f5
+\tab \tab \}}
+\par \pard\plain \s0\nowidctlpar\hyphpar0\cf0\kerning1\dbch\af6\langfe2052\dbch\af7\afs24\alang1081\loch\f3\fs24\lang16393\sl276\slmult1\sb0\sa200{\rtlch \ltrch\loch\fs22\lang9\loch\f5
+\tab \}}
+\par \pard\plain \s0\nowidctlpar\hyphpar0\cf0\kerning1\dbch\af6\langfe2052\dbch\af7\afs24\alang1081\loch\f3\fs24\lang16393\sl276\slmult1\sb0\sa200\rtlch \ltrch\loch\fs22\lang9\loch\f5
+
+\par \pard\plain \s0\nowidctlpar\hyphpar0\cf0\kerning1\dbch\af6\langfe2052\dbch\af7\afs24\alang1081\loch\f3\fs24\lang16393\sl276\slmult1\sb0\sa200{\rtlch \ltrch\loch\fs22\lang9\loch\f5
+\tab cout<<"\\n==========================================================";}
+\par \pard\plain \s0\nowidctlpar\hyphpar0\cf0\kerning1\dbch\af6\langfe2052\dbch\af7\afs24\alang1081\loch\f3\fs24\lang16393\sl276\slmult1\sb0\sa200{\rtlch \ltrch\loch\fs22\lang9\loch\f5
+\}}
+\par \pard\plain \s0\nowidctlpar\hyphpar0\cf0\kerning1\dbch\af6\langfe2052\dbch\af7\afs24\alang1081\loch\f3\fs24\lang16393\sl276\slmult1\sb0\sa200\rtlch \ltrch\loch\fs22\lang9\loch\f5
+
+\par \pard\plain \s0\nowidctlpar\hyphpar0\cf0\kerning1\dbch\af6\langfe2052\dbch\af7\afs24\alang1081\loch\f3\fs24\lang16393\sl276\slmult1\sb0\sa200{\rtlch \ltrch\loch\fs22\lang9\loch\f5
+void graph::add_vertex()}
+\par \pard\plain \s0\nowidctlpar\hyphpar0\cf0\kerning1\dbch\af6\langfe2052\dbch\af7\afs24\alang1081\loch\f3\fs24\lang16393\sl276\slmult1\sb0\sa200{\rtlch \ltrch\loch\fs22\lang9\loch\f5
+\{}
+\par \pard\plain \s0\nowidctlpar\hyphpar0\cf0\kerning1\dbch\af6\langfe2052\dbch\af7\afs24\alang1081\loch\f3\fs24\lang16393\sl276\slmult1\sb0\sa200{\rtlch \ltrch\loch\fs22\lang9\loch\f5
+\tab char nam[10];}
+\par \pard\plain \s0\nowidctlpar\hyphpar0\cf0\kerning1\dbch\af6\langfe2052\dbch\af7\afs24\alang1081\loch\f3\fs24\lang16393\sl276\slmult1\sb0\sa200{\rtlch \ltrch\loch\fs22\lang9\loch\f5
+\tab int flag=-1;}
+\par \pard\plain \s0\nowidctlpar\hyphpar0\cf0\kerning1\dbch\af6\langfe2052\dbch\af7\afs24\alang1081\loch\f3\fs24\lang16393\sl276\slmult1\sb0\sa200{\rtlch \ltrch\loch\fs22\lang9\loch\f5
+\tab cout<<"\\nEnter name of vertex to be added-: ";}
+\par \pard\plain \s0\nowidctlpar\hyphpar0\cf0\kerning1\dbch\af6\langfe2052\dbch\af7\afs24\alang1081\loch\f3\fs24\lang16393\sl276\slmult1\sb0\sa200{\rtlch \ltrch\loch\fs22\lang9\loch\f5
+\tab cin>>nam;}
+\par \pard\plain \s0\nowidctlpar\hyphpar0\cf0\kerning1\dbch\af6\langfe2052\dbch\af7\afs24\alang1081\loch\f3\fs24\lang16393\sl276\slmult1\sb0\sa200{\rtlch \ltrch\loch\fs22\lang9\loch\f5
+\tab flag=check(nam);}
+\par \pard\plain \s0\nowidctlpar\hyphpar0\cf0\kerning1\dbch\af6\langfe2052\dbch\af7\afs24\alang1081\loch\f3\fs24\lang16393\sl276\slmult1\sb0\sa200{\rtlch \ltrch\loch\fs22\lang9\loch\f5
+\tab if(flag==-1)}
+\par \pard\plain \s0\nowidctlpar\hyphpar0\cf0\kerning1\dbch\af6\langfe2052\dbch\af7\afs24\alang1081\loch\f3\fs24\lang16393\sl276\slmult1\sb0\sa200{\rtlch \ltrch\fs22\lang9\loch\f5
+    }{\rtlch \ltrch\loch\fs22\lang9\loch\f5
+\{}
+\par \pard\plain \s0\nowidctlpar\hyphpar0\cf0\kerning1\dbch\af6\langfe2052\dbch\af7\afs24\alang1081\loch\f3\fs24\lang16393\sl276\slmult1\sb0\sa200{\rtlch \ltrch\fs22\lang9\loch\f5
+        }{\rtlch \ltrch\loch\fs22\lang9\loch\f5
+node *temp = new node(0);}
+\par \pard\plain \s0\nowidctlpar\hyphpar0\cf0\kerning1\dbch\af6\langfe2052\dbch\af7\afs24\alang1081\loch\f3\fs24\lang16393\sl276\slmult1\sb0\sa200{\rtlch \ltrch\loch\fs22\lang9\loch\f5
+\tab     strcpy(temp->name,nam);}
+\par \pard\plain \s0\nowidctlpar\hyphpar0\cf0\kerning1\dbch\af6\langfe2052\dbch\af7\afs24\alang1081\loch\f3\fs24\lang16393\sl276\slmult1\sb0\sa200{\rtlch \ltrch\fs22\lang9\loch\f5
+        }{\rtlch \ltrch\loch\fs22\lang9\loch\f5
+vertex[n]=temp;}
+\par \pard\plain \s0\nowidctlpar\hyphpar0\cf0\kerning1\dbch\af6\langfe2052\dbch\af7\afs24\alang1081\loch\f3\fs24\lang16393\sl276\slmult1\sb0\sa200{\rtlch \ltrch\fs22\lang9\loch\f5
+        }{\rtlch \ltrch\loch\fs22\lang9\loch\f5
+vertex[n]->next=NULL;}
+\par \pard\plain \s0\nowidctlpar\hyphpar0\cf0\kerning1\dbch\af6\langfe2052\dbch\af7\afs24\alang1081\loch\f3\fs24\lang16393\sl276\slmult1\sb0\sa200{\rtlch \ltrch\fs22\lang9\loch\f5
+        }{\rtlch \ltrch\loch\fs22\lang9\loch\f5
+n++;}
+\par \pard\plain \s0\nowidctlpar\hyphpar0\cf0\kerning1\dbch\af6\langfe2052\dbch\af7\afs24\alang1081\loch\f3\fs24\lang16393\sl276\slmult1\sb0\sa200{\rtlch \ltrch\fs22\lang9\loch\f5
+    }{\rtlch \ltrch\loch\fs22\lang9\loch\f5
+\}}
+\par \pard\plain \s0\nowidctlpar\hyphpar0\cf0\kerning1\dbch\af6\langfe2052\dbch\af7\afs24\alang1081\loch\f3\fs24\lang16393\sl276\slmult1\sb0\sa200{\rtlch \ltrch\fs22\lang9\loch\f5
+    }{\rtlch \ltrch\loch\fs22\lang9\loch\f5
+else}
+\par \pard\plain \s0\nowidctlpar\hyphpar0\cf0\kerning1\dbch\af6\langfe2052\dbch\af7\afs24\alang1081\loch\f3\fs24\lang16393\sl276\slmult1\sb0\sa200{\rtlch \ltrch\fs22\lang9\loch\f5
+        }{\rtlch \ltrch\loch\fs22\lang9\loch\f5
+cout<<"\\nCity A}{\rtlch \ltrch\loch\fs22\lang9\loch\f5
+l}{\rtlch \ltrch\loch\fs22\lang9\loch\f5
+ready Present!!";}
+\par \pard\plain \s0\nowidctlpar\hyphpar0\cf0\kerning1\dbch\af6\langfe2052\dbch\af7\afs24\alang1081\loch\f3\fs24\lang16393\sl276\slmult1\sb0\sa200{\rtlch \ltrch\loch\fs22\lang9\loch\f5
+\}}
+\par \pard\plain \s0\nowidctlpar\hyphpar0\cf0\kerning1\dbch\af6\langfe2052\dbch\af7\afs24\alang1081\loch\f3\fs24\lang16393\sl276\slmult1\sb0\sa200\rtlch \ltrch\loch\fs22\lang9\loch\f5
+
+\par \pard\plain \s0\nowidctlpar\hyphpar0\cf0\kerning1\dbch\af6\langfe2052\dbch\af7\afs24\alang1081\loch\f3\fs24\lang16393\sl276\slmult1\sb0\sa200{\rtlch \ltrch\loch\fs22\lang9\loch\f5
+void graph::delete_edge()}
+\par \pard\plain \s0\nowidctlpar\hyphpar0\cf0\kerning1\dbch\af6\langfe2052\dbch\af7\afs24\alang1081\loch\f3\fs24\lang16393\sl276\slmult1\sb0\sa200{\rtlch \ltrch\loch\fs22\lang9\loch\f5
+\{}
+\par \pard\plain \s0\nowidctlpar\hyphpar0\cf0\kerning1\dbch\af6\langfe2052\dbch\af7\afs24\alang1081\loch\f3\fs24\lang16393\sl276\slmult1\sb0\sa200{\rtlch \ltrch\fs22\lang9\loch\f5
+    }{\rtlch \ltrch\loch\fs22\lang9\loch\f5
+char ini[30],fin[30];}
+\par \pard\plain \s0\nowidctlpar\hyphpar0\cf0\kerning1\dbch\af6\langfe2052\dbch\af7\afs24\alang1081\loch\f3\fs24\lang16393\sl276\slmult1\sb0\sa200{\rtlch \ltrch\fs22\lang9\loch\f5
+    }{\rtlch \ltrch\loch\fs22\lang9\loch\f5
+int flag=0;}
+\par \pard\plain \s0\nowidctlpar\hyphpar0\cf0\kerning1\dbch\af6\langfe2052\dbch\af7\afs24\alang1081\loch\f3\fs24\lang16393\sl276\slmult1\sb0\sa200\rtlch \ltrch\loch\fs22\lang9\loch\f5
+
+\par \pard\plain \s0\nowidctlpar\hyphpar0\cf0\kerning1\dbch\af6\langfe2052\dbch\af7\afs24\alang1081\loch\f3\fs24\lang16393\sl276\slmult1\sb0\sa200{\rtlch \ltrch\fs22\lang9\loch\f5
+    }{\rtlch \ltrch\loch\fs22\lang9\loch\f5
+cout<<"\\nEnter Initial point of Edge-: ";}
+\par \pard\plain \s0\nowidctlpar\hyphpar0\cf0\kerning1\dbch\af6\langfe2052\dbch\af7\afs24\alang1081\loch\f3\fs24\lang16393\sl276\slmult1\sb0\sa200{\rtlch \ltrch\fs22\lang9\loch\f5
+    }{\rtlch \ltrch\loch\fs22\lang9\loch\f5
+cin>>ini;}
+\par \pard\plain \s0\nowidctlpar\hyphpar0\cf0\kerning1\dbch\af6\langfe2052\dbch\af7\afs24\alang1081\loch\f3\fs24\lang16393\sl276\slmult1\sb0\sa200{\rtlch \ltrch\fs22\lang9\loch\f5
+    }{\rtlch \ltrch\loch\fs22\lang9\loch\f5
+cout<<"\\nEnter Final point of Edge-: ";}
+\par \pard\plain \s0\nowidctlpar\hyphpar0\cf0\kerning1\dbch\af6\langfe2052\dbch\af7\afs24\alang1081\loch\f3\fs24\lang16393\sl276\slmult1\sb0\sa200{\rtlch \ltrch\fs22\lang9\loch\f5
+    }{\rtlch \ltrch\loch\fs22\lang9\loch\f5
+cin>>fin;}
+\par \pard\plain \s0\nowidctlpar\hyphpar0\cf0\kerning1\dbch\af6\langfe2052\dbch\af7\afs24\alang1081\loch\f3\fs24\lang16393\sl276\slmult1\sb0\sa200{\rtlch \ltrch\fs22\lang9\loch\f5
+    }{\rtlch \ltrch\loch\fs22\lang9\loch\f5
+int f1=check(ini);}
+\par \pard\plain \s0\nowidctlpar\hyphpar0\cf0\kerning1\dbch\af6\langfe2052\dbch\af7\afs24\alang1081\loch\f3\fs24\lang16393\sl276\slmult1\sb0\sa200{\rtlch \ltrch\fs22\lang9\loch\f5
+    }{\rtlch \ltrch\loch\fs22\lang9\loch\f5
+int f2=check(fin);}
+\par \pard\plain \s0\nowidctlpar\hyphpar0\cf0\kerning1\dbch\af6\langfe2052\dbch\af7\afs24\alang1081\loch\f3\fs24\lang16393\sl276\slmult1\sb0\sa200{\rtlch \ltrch\fs22\lang9\loch\f5
+    }{\rtlch \ltrch\loch\fs22\lang9\loch\f5
+if(f1!=-1 && f2!=-1)}
+\par \pard\plain \s0\nowidctlpar\hyphpar0\cf0\kerning1\dbch\af6\langfe2052\dbch\af7\afs24\alang1081\loch\f3\fs24\lang16393\sl276\slmult1\sb0\sa200{\rtlch \ltrch\fs22\lang9\loch\f5
+    }{\rtlch \ltrch\loch\fs22\lang9\loch\f5
+\{}
+\par \pard\plain \s0\nowidctlpar\hyphpar0\cf0\kerning1\dbch\af6\langfe2052\dbch\af7\afs24\alang1081\loch\f3\fs24\lang16393\sl276\slmult1\sb0\sa200{\rtlch \ltrch\fs22\lang9\loch\f5
+       }{\rtlch \ltrch\loch\fs22\lang9\loch\f5
+node *temp=vertex[f1];}
+\par \pard\plain \s0\nowidctlpar\hyphpar0\cf0\kerning1\dbch\af6\langfe2052\dbch\af7\afs24\alang1081\loch\f3\fs24\lang16393\sl276\slmult1\sb0\sa200{\rtlch \ltrch\fs22\lang9\loch\f5
+       }{\rtlch \ltrch\loch\fs22\lang9\loch\f5
+node *p;}
+\par \pard\plain \s0\nowidctlpar\hyphpar0\cf0\kerning1\dbch\af6\langfe2052\dbch\af7\afs24\alang1081\loch\f3\fs24\lang16393\sl276\slmult1\sb0\sa200{\rtlch \ltrch\fs22\lang9\loch\f5
+       }{\rtlch \ltrch\loch\fs22\lang9\loch\f5
+while(temp!=NULL )}
+\par \pard\plain \s0\nowidctlpar\hyphpar0\cf0\kerning1\dbch\af6\langfe2052\dbch\af7\afs24\alang1081\loch\f3\fs24\lang16393\sl276\slmult1\sb0\sa200{\rtlch \ltrch\fs22\lang9\loch\f5
+       }{\rtlch \ltrch\loch\fs22\lang9\loch\f5
+\{}
+\par \pard\plain \s0\nowidctlpar\hyphpar0\cf0\kerning1\dbch\af6\langfe2052\dbch\af7\afs24\alang1081\loch\f3\fs24\lang16393\sl276\slmult1\sb0\sa200{\rtlch \ltrch\fs22\lang9\loch\f5
+           }{\rtlch \ltrch\loch\fs22\lang9\loch\f5
+if(strcmp(temp->name,fin)!=0)}
+\par \pard\plain \s0\nowidctlpar\hyphpar0\cf0\kerning1\dbch\af6\langfe2052\dbch\af7\afs24\alang1081\loch\f3\fs24\lang16393\sl276\slmult1\sb0\sa200{\rtlch \ltrch\fs22\lang9\loch\f5
+           }{\rtlch \ltrch\loch\fs22\lang9\loch\f5
+\{}
+\par \pard\plain \s0\nowidctlpar\hyphpar0\cf0\kerning1\dbch\af6\langfe2052\dbch\af7\afs24\alang1081\loch\f3\fs24\lang16393\sl276\slmult1\sb0\sa200{\rtlch \ltrch\fs22\lang9\loch\f5
+               }{\rtlch \ltrch\loch\fs22\lang9\loch\f5
+p=temp;}
+\par \pard\plain \s0\nowidctlpar\hyphpar0\cf0\kerning1\dbch\af6\langfe2052\dbch\af7\afs24\alang1081\loch\f3\fs24\lang16393\sl276\slmult1\sb0\sa200{\rtlch \ltrch\fs22\lang9\loch\f5
+               }{\rtlch \ltrch\loch\fs22\lang9\loch\f5
+temp=temp->next;}
+\par \pard\plain \s0\nowidctlpar\hyphpar0\cf0\kerning1\dbch\af6\langfe2052\dbch\af7\afs24\alang1081\loch\f3\fs24\lang16393\sl276\slmult1\sb0\sa200{\rtlch \ltrch\fs22\lang9\loch\f5
+               }{\rtlch \ltrch\loch\fs22\lang9\loch\f5
+flag=0;}
+\par \pard\plain \s0\nowidctlpar\hyphpar0\cf0\kerning1\dbch\af6\langfe2052\dbch\af7\afs24\alang1081\loch\f3\fs24\lang16393\sl276\slmult1\sb0\sa200{\rtlch \ltrch\fs22\lang9\loch\f5
+           }{\rtlch \ltrch\loch\fs22\lang9\loch\f5
+\}}
+\par \pard\plain \s0\nowidctlpar\hyphpar0\cf0\kerning1\dbch\af6\langfe2052\dbch\af7\afs24\alang1081\loch\f3\fs24\lang16393\sl276\slmult1\sb0\sa200{\rtlch \ltrch\fs22\lang9\loch\f5
+           }{\rtlch \ltrch\loch\fs22\lang9\loch\f5
+else}
+\par \pard\plain \s0\nowidctlpar\hyphpar0\cf0\kerning1\dbch\af6\langfe2052\dbch\af7\afs24\alang1081\loch\f3\fs24\lang16393\sl276\slmult1\sb0\sa200{\rtlch \ltrch\fs22\lang9\loch\f5
+           }{\rtlch \ltrch\loch\fs22\lang9\loch\f5
+\{}
+\par \pard\plain \s0\nowidctlpar\hyphpar0\cf0\kerning1\dbch\af6\langfe2052\dbch\af7\afs24\alang1081\loch\f3\fs24\lang16393\sl276\slmult1\sb0\sa200{\rtlch \ltrch\fs22\lang9\loch\f5
+            }{\rtlch \ltrch\loch\fs22\lang9\loch\f5
+flag=1;}
+\par \pard\plain \s0\nowidctlpar\hyphpar0\cf0\kerning1\dbch\af6\langfe2052\dbch\af7\afs24\alang1081\loch\f3\fs24\lang16393\sl276\slmult1\sb0\sa200{\rtlch \ltrch\fs22\lang9\loch\f5
+            }{\rtlch \ltrch\loch\fs22\lang9\loch\f5
+break;}
+\par \pard\plain \s0\nowidctlpar\hyphpar0\cf0\kerning1\dbch\af6\langfe2052\dbch\af7\afs24\alang1081\loch\f3\fs24\lang16393\sl276\slmult1\sb0\sa200{\rtlch \ltrch\fs22\lang9\loch\f5
+           }{\rtlch \ltrch\loch\fs22\lang9\loch\f5
+\}}
+\par \pard\plain \s0\nowidctlpar\hyphpar0\cf0\kerning1\dbch\af6\langfe2052\dbch\af7\afs24\alang1081\loch\f3\fs24\lang16393\sl276\slmult1\sb0\sa200{\rtlch \ltrch\fs22\lang9\loch\f5
+       }{\rtlch \ltrch\loch\fs22\lang9\loch\f5
+\}}
+\par \pard\plain \s0\nowidctlpar\hyphpar0\cf0\kerning1\dbch\af6\langfe2052\dbch\af7\afs24\alang1081\loch\f3\fs24\lang16393\sl276\slmult1\sb0\sa200{\rtlch \ltrch\fs22\lang9\loch\f5
+       }{\rtlch \ltrch\loch\fs22\lang9\loch\f5
+if(flag==1)}
+\par \pard\plain \s0\nowidctlpar\hyphpar0\cf0\kerning1\dbch\af6\langfe2052\dbch\af7\afs24\alang1081\loch\f3\fs24\lang16393\sl276\slmult1\sb0\sa200{\rtlch \ltrch\fs22\lang9\loch\f5
+       }{\rtlch \ltrch\loch\fs22\lang9\loch\f5
+\{}
+\par \pard\plain \s0\nowidctlpar\hyphpar0\cf0\kerning1\dbch\af6\langfe2052\dbch\af7\afs24\alang1081\loch\f3\fs24\lang16393\sl276\slmult1\sb0\sa200{\rtlch \ltrch\fs22\lang9\loch\f5
+         }{\rtlch \ltrch\loch\fs22\lang9\loch\f5
+p->next=temp->next;}
+\par \pard\plain \s0\nowidctlpar\hyphpar0\cf0\kerning1\dbch\af6\langfe2052\dbch\af7\afs24\alang1081\loch\f3\fs24\lang16393\sl276\slmult1\sb0\sa200{\rtlch \ltrch\fs22\lang9\loch\f5
+       }{\rtlch \ltrch\loch\fs22\lang9\loch\f5
+\}}
+\par \pard\plain \s0\nowidctlpar\hyphpar0\cf0\kerning1\dbch\af6\langfe2052\dbch\af7\afs24\alang1081\loch\f3\fs24\lang16393\sl276\slmult1\sb0\sa200{\rtlch \ltrch\fs22\lang9\loch\f5
+       }{\rtlch \ltrch\loch\fs22\lang9\loch\f5
+else}
+\par \pard\plain \s0\nowidctlpar\hyphpar0\cf0\kerning1\dbch\af6\langfe2052\dbch\af7\afs24\alang1081\loch\f3\fs24\lang16393\sl276\slmult1\sb0\sa200{\rtlch \ltrch\fs22\lang9\loch\f5
+       }{\rtlch \ltrch\loch\fs22\lang9\loch\f5
+\{}
+\par \pard\plain \s0\nowidctlpar\hyphpar0\cf0\kerning1\dbch\af6\langfe2052\dbch\af7\afs24\alang1081\loch\f3\fs24\lang16393\sl276\slmult1\sb0\sa200{\rtlch \ltrch\fs22\lang9\loch\f5
+           }{\rtlch \ltrch\loch\fs22\lang9\loch\f5
+cout<<"\\nNo such Edge Exist!!";}
+\par \pard\plain \s0\nowidctlpar\hyphpar0\cf0\kerning1\dbch\af6\langfe2052\dbch\af7\afs24\alang1081\loch\f3\fs24\lang16393\sl276\slmult1\sb0\sa200{\rtlch \ltrch\fs22\lang9\loch\f5
+       }{\rtlch \ltrch\loch\fs22\lang9\loch\f5
+\}}
+\par \pard\plain \s0\nowidctlpar\hyphpar0\cf0\kerning1\dbch\af6\langfe2052\dbch\af7\afs24\alang1081\loch\f3\fs24\lang16393\sl276\slmult1\sb0\sa200{\rtlch \ltrch\fs22\lang9\loch\f5
+    }{\rtlch \ltrch\loch\fs22\lang9\loch\f5
+\}}
+\par \pard\plain \s0\nowidctlpar\hyphpar0\cf0\kerning1\dbch\af6\langfe2052\dbch\af7\afs24\alang1081\loch\f3\fs24\lang16393\sl276\slmult1\sb0\sa200{\rtlch \ltrch\fs22\lang9\loch\f5
+    }{\rtlch \ltrch\loch\fs22\lang9\loch\f5
+else}
+\par \pard\plain \s0\nowidctlpar\hyphpar0\cf0\kerning1\dbch\af6\langfe2052\dbch\af7\afs24\alang1081\loch\f3\fs24\lang16393\sl276\slmult1\sb0\sa200{\rtlch \ltrch\fs22\lang9\loch\f5
+    }{\rtlch \ltrch\loch\fs22\lang9\loch\f5
+\{}
+\par \pard\plain \s0\nowidctlpar\hyphpar0\cf0\kerning1\dbch\af6\langfe2052\dbch\af7\afs24\alang1081\loch\f3\fs24\lang16393\sl276\slmult1\sb0\sa200{\rtlch \ltrch\fs22\lang9\loch\f5
+        }{\rtlch \ltrch\loch\fs22\lang9\loch\f5
+cout<<"\\nEnter valid City name!!";}
+\par \pard\plain \s0\nowidctlpar\hyphpar0\cf0\kerning1\dbch\af6\langfe2052\dbch\af7\afs24\alang1081\loch\f3\fs24\lang16393\sl276\slmult1\sb0\sa200{\rtlch \ltrch\fs22\lang9\loch\f5
+    }{\rtlch \ltrch\loch\fs22\lang9\loch\f5
+\}}
+\par \pard\plain \s0\nowidctlpar\hyphpar0\cf0\kerning1\dbch\af6\langfe2052\dbch\af7\afs24\alang1081\loch\f3\fs24\lang16393\sl276\slmult1\sb0\sa200\rtlch \ltrch\loch\fs22\lang9\loch\f5
+
+\par \pard\plain \s0\nowidctlpar\hyphpar0\cf0\kerning1\dbch\af6\langfe2052\dbch\af7\afs24\alang1081\loch\f3\fs24\lang16393\sl276\slmult1\sb0\sa200{\rtlch \ltrch\fs22\lang9\loch\f5
+  }{\rtlch \ltrch\loch\fs22\lang9\loch\f5
+if(directed==0 && flag==1)}
+\par \pard\plain \s0\nowidctlpar\hyphpar0\cf0\kerning1\dbch\af6\langfe2052\dbch\af7\afs24\alang1081\loch\f3\fs24\lang16393\sl276\slmult1\sb0\sa200{\rtlch \ltrch\fs22\lang9\loch\f5
+  }{\rtlch \ltrch\loch\fs22\lang9\loch\f5
+\{}
+\par \pard\plain \s0\nowidctlpar\hyphpar0\cf0\kerning1\dbch\af6\langfe2052\dbch\af7\afs24\alang1081\loch\f3\fs24\lang16393\sl276\slmult1\sb0\sa200{\rtlch \ltrch\fs22\lang9\loch\f5
+       }{\rtlch \ltrch\loch\fs22\lang9\loch\f5
+node *temp=vertex[f2];}
+\par \pard\plain \s0\nowidctlpar\hyphpar0\cf0\kerning1\dbch\af6\langfe2052\dbch\af7\afs24\alang1081\loch\f3\fs24\lang16393\sl276\slmult1\sb0\sa200{\rtlch \ltrch\fs22\lang9\loch\f5
+       }{\rtlch \ltrch\loch\fs22\lang9\loch\f5
+node *p;}
+\par \pard\plain \s0\nowidctlpar\hyphpar0\cf0\kerning1\dbch\af6\langfe2052\dbch\af7\afs24\alang1081\loch\f3\fs24\lang16393\sl276\slmult1\sb0\sa200{\rtlch \ltrch\fs22\lang9\loch\f5
+       }{\rtlch \ltrch\loch\fs22\lang9\loch\f5
+while(temp!=NULL )}
+\par \pard\plain \s0\nowidctlpar\hyphpar0\cf0\kerning1\dbch\af6\langfe2052\dbch\af7\afs24\alang1081\loch\f3\fs24\lang16393\sl276\slmult1\sb0\sa200{\rtlch \ltrch\fs22\lang9\loch\f5
+       }{\rtlch \ltrch\loch\fs22\lang9\loch\f5
+\{}
+\par \pard\plain \s0\nowidctlpar\hyphpar0\cf0\kerning1\dbch\af6\langfe2052\dbch\af7\afs24\alang1081\loch\f3\fs24\lang16393\sl276\slmult1\sb0\sa200{\rtlch \ltrch\fs22\lang9\loch\f5
+           }{\rtlch \ltrch\loch\fs22\lang9\loch\f5
+if(strcmp(temp->name,ini)!=0)}
+\par \pard\plain \s0\nowidctlpar\hyphpar0\cf0\kerning1\dbch\af6\langfe2052\dbch\af7\afs24\alang1081\loch\f3\fs24\lang16393\sl276\slmult1\sb0\sa200{\rtlch \ltrch\fs22\lang9\loch\f5
+           }{\rtlch \ltrch\loch\fs22\lang9\loch\f5
+\{}
+\par \pard\plain \s0\nowidctlpar\hyphpar0\cf0\kerning1\dbch\af6\langfe2052\dbch\af7\afs24\alang1081\loch\f3\fs24\lang16393\sl276\slmult1\sb0\sa200{\rtlch \ltrch\fs22\lang9\loch\f5
+               }{\rtlch \ltrch\loch\fs22\lang9\loch\f5
+p=temp;}
+\par \pard\plain \s0\nowidctlpar\hyphpar0\cf0\kerning1\dbch\af6\langfe2052\dbch\af7\afs24\alang1081\loch\f3\fs24\lang16393\sl276\slmult1\sb0\sa200{\rtlch \ltrch\fs22\lang9\loch\f5
+               }{\rtlch \ltrch\loch\fs22\lang9\loch\f5
+temp=temp->next;}
+\par \pard\plain \s0\nowidctlpar\hyphpar0\cf0\kerning1\dbch\af6\langfe2052\dbch\af7\afs24\alang1081\loch\f3\fs24\lang16393\sl276\slmult1\sb0\sa200{\rtlch \ltrch\fs22\lang9\loch\f5
+               }{\rtlch \ltrch\loch\fs22\lang9\loch\f5
+flag=0;}
+\par \pard\plain \s0\nowidctlpar\hyphpar0\cf0\kerning1\dbch\af6\langfe2052\dbch\af7\afs24\alang1081\loch\f3\fs24\lang16393\sl276\slmult1\sb0\sa200{\rtlch \ltrch\fs22\lang9\loch\f5
+           }{\rtlch \ltrch\loch\fs22\lang9\loch\f5
+\}}
+\par \pard\plain \s0\nowidctlpar\hyphpar0\cf0\kerning1\dbch\af6\langfe2052\dbch\af7\afs24\alang1081\loch\f3\fs24\lang16393\sl276\slmult1\sb0\sa200{\rtlch \ltrch\fs22\lang9\loch\f5
+           }{\rtlch \ltrch\loch\fs22\lang9\loch\f5
+else}
+\par \pard\plain \s0\nowidctlpar\hyphpar0\cf0\kerning1\dbch\af6\langfe2052\dbch\af7\afs24\alang1081\loch\f3\fs24\lang16393\sl276\slmult1\sb0\sa200{\rtlch \ltrch\fs22\lang9\loch\f5
+           }{\rtlch \ltrch\loch\fs22\lang9\loch\f5
+\{}
+\par \pard\plain \s0\nowidctlpar\hyphpar0\cf0\kerning1\dbch\af6\langfe2052\dbch\af7\afs24\alang1081\loch\f3\fs24\lang16393\sl276\slmult1\sb0\sa200{\rtlch \ltrch\fs22\lang9\loch\f5
+            }{\rtlch \ltrch\loch\fs22\lang9\loch\f5
+flag=1;}
+\par \pard\plain \s0\nowidctlpar\hyphpar0\cf0\kerning1\dbch\af6\langfe2052\dbch\af7\afs24\alang1081\loch\f3\fs24\lang16393\sl276\slmult1\sb0\sa200{\rtlch \ltrch\fs22\lang9\loch\f5
+            }{\rtlch \ltrch\loch\fs22\lang9\loch\f5
+break;}
+\par \pard\plain \s0\nowidctlpar\hyphpar0\cf0\kerning1\dbch\af6\langfe2052\dbch\af7\afs24\alang1081\loch\f3\fs24\lang16393\sl276\slmult1\sb0\sa200{\rtlch \ltrch\fs22\lang9\loch\f5
+           }{\rtlch \ltrch\loch\fs22\lang9\loch\f5
+\}}
+\par \pard\plain \s0\nowidctlpar\hyphpar0\cf0\kerning1\dbch\af6\langfe2052\dbch\af7\afs24\alang1081\loch\f3\fs24\lang16393\sl276\slmult1\sb0\sa200{\rtlch \ltrch\fs22\lang9\loch\f5
+       }{\rtlch \ltrch\loch\fs22\lang9\loch\f5
+\}}
+\par \pard\plain \s0\nowidctlpar\hyphpar0\cf0\kerning1\dbch\af6\langfe2052\dbch\af7\afs24\alang1081\loch\f3\fs24\lang16393\sl276\slmult1\sb0\sa200{\rtlch \ltrch\fs22\lang9\loch\f5
+       }{\rtlch \ltrch\loch\fs22\lang9\loch\f5
+if(flag==1)}
+\par \pard\plain \s0\nowidctlpar\hyphpar0\cf0\kerning1\dbch\af6\langfe2052\dbch\af7\afs24\alang1081\loch\f3\fs24\lang16393\sl276\slmult1\sb0\sa200{\rtlch \ltrch\fs22\lang9\loch\f5
+       }{\rtlch \ltrch\loch\fs22\lang9\loch\f5
+\{}
+\par \pard\plain \s0\nowidctlpar\hyphpar0\cf0\kerning1\dbch\af6\langfe2052\dbch\af7\afs24\alang1081\loch\f3\fs24\lang16393\sl276\slmult1\sb0\sa200{\rtlch \ltrch\fs22\lang9\loch\f5
+         }{\rtlch \ltrch\loch\fs22\lang9\loch\f5
+p->next=temp->next;}
+\par \pard\plain \s0\nowidctlpar\hyphpar0\cf0\kerning1\dbch\af6\langfe2052\dbch\af7\afs24\alang1081\loch\f3\fs24\lang16393\sl276\slmult1\sb0\sa200{\rtlch \ltrch\fs22\lang9\loch\f5
+       }{\rtlch \ltrch\loch\fs22\lang9\loch\f5
+\}}
+\par \pard\plain \s0\nowidctlpar\hyphpar0\cf0\kerning1\dbch\af6\langfe2052\dbch\af7\afs24\alang1081\loch\f3\fs24\lang16393\sl276\slmult1\sb0\sa200{\rtlch \ltrch\fs22\lang9\loch\f5
+  }{\rtlch \ltrch\loch\fs22\lang9\loch\f5
+\}}
+\par \pard\plain \s0\nowidctlpar\hyphpar0\cf0\kerning1\dbch\af6\langfe2052\dbch\af7\afs24\alang1081\loch\f3\fs24\lang16393\sl276\slmult1\sb0\sa200\rtlch \ltrch\loch\fs22\lang9\loch\f5
+
+\par \pard\plain \s0\nowidctlpar\hyphpar0\cf0\kerning1\dbch\af6\langfe2052\dbch\af7\afs24\alang1081\loch\f3\fs24\lang16393\sl276\slmult1\sb0\sa200{\rtlch \ltrch\loch\fs22\lang9\loch\f5
+\}}
+\par \pard\plain \s0\nowidctlpar\hyphpar0\cf0\kerning1\dbch\af6\langfe2052\dbch\af7\afs24\alang1081\loch\f3\fs24\lang16393\sl276\slmult1\sb0\sa200\rtlch \ltrch\loch\fs22\lang9\loch\f5
+
+\par \pard\plain \s0\nowidctlpar\hyphpar0\cf0\kerning1\dbch\af6\langfe2052\dbch\af7\afs24\alang1081\loch\f3\fs24\lang16393\sl276\slmult1\sb0\sa200{\rtlch \ltrch\loch\fs22\lang9\loch\f5
+void graph::delete_vertex()}
+\par \pard\plain \s0\nowidctlpar\hyphpar0\cf0\kerning1\dbch\af6\langfe2052\dbch\af7\afs24\alang1081\loch\f3\fs24\lang16393\sl276\slmult1\sb0\sa200{\rtlch \ltrch\loch\fs22\lang9\loch\f5
+\{}
+\par \pard\plain \s0\nowidctlpar\hyphpar0\cf0\kerning1\dbch\af6\langfe2052\dbch\af7\afs24\alang1081\loch\f3\fs24\lang16393\sl276\slmult1\sb0\sa200{\rtlch \ltrch\fs22\lang9\loch\f5
+    }{\rtlch \ltrch\loch\fs22\lang9\loch\f5
+char vert[30];}
+\par \pard\plain \s0\nowidctlpar\hyphpar0\cf0\kerning1\dbch\af6\langfe2052\dbch\af7\afs24\alang1081\loch\f3\fs24\lang16393\sl276\slmult1\sb0\sa200{\rtlch \ltrch\fs22\lang9\loch\f5
+    }{\rtlch \ltrch\loch\fs22\lang9\loch\f5
+cout<<"\\nEnter Name of city to be deleted-: ";}
+\par \pard\plain \s0\nowidctlpar\hyphpar0\cf0\kerning1\dbch\af6\langfe2052\dbch\af7\afs24\alang1081\loch\f3\fs24\lang16393\sl276\slmult1\sb0\sa200{\rtlch \ltrch\fs22\lang9\loch\f5
+    }{\rtlch \ltrch\loch\fs22\lang9\loch\f5
+cin>>vert;}
+\par \pard\plain \s0\nowidctlpar\hyphpar0\cf0\kerning1\dbch\af6\langfe2052\dbch\af7\afs24\alang1081\loch\f3\fs24\lang16393\sl276\slmult1\sb0\sa200\rtlch \ltrch\loch\fs22\lang9\loch\f5
+
+\par \pard\plain \s0\nowidctlpar\hyphpar0\cf0\kerning1\dbch\af6\langfe2052\dbch\af7\afs24\alang1081\loch\f3\fs24\lang16393\sl276\slmult1\sb0\sa200{\rtlch \ltrch\fs22\lang9\loch\f5
+    }{\rtlch \ltrch\loch\fs22\lang9\loch\f5
+int f1=check(vert);}
+\par \pard\plain \s0\nowidctlpar\hyphpar0\cf0\kerning1\dbch\af6\langfe2052\dbch\af7\afs24\alang1081\loch\f3\fs24\lang16393\sl276\slmult1\sb0\sa200{\rtlch \ltrch\fs22\lang9\loch\f5
+    }{\rtlch \ltrch\loch\fs22\lang9\loch\f5
+if(f1!=-1)}
+\par \pard\plain \s0\nowidctlpar\hyphpar0\cf0\kerning1\dbch\af6\langfe2052\dbch\af7\afs24\alang1081\loch\f3\fs24\lang16393\sl276\slmult1\sb0\sa200{\rtlch \ltrch\fs22\lang9\loch\f5
+    }{\rtlch \ltrch\loch\fs22\lang9\loch\f5
+\{}
+\par \pard\plain \s0\nowidctlpar\hyphpar0\cf0\kerning1\dbch\af6\langfe2052\dbch\af7\afs24\alang1081\loch\f3\fs24\lang16393\sl276\slmult1\sb0\sa200{\rtlch \ltrch\fs22\lang9\loch\f5
+    }{\rtlch \ltrch\loch\fs22\lang9\loch\f5
+vertex[f1]=NULL;}
+\par \pard\plain \s0\nowidctlpar\hyphpar0\cf0\kerning1\dbch\af6\langfe2052\dbch\af7\afs24\alang1081\loch\f3\fs24\lang16393\sl276\slmult1\sb0\sa200{\rtlch \ltrch\fs22\lang9\loch\f5
+    }{\rtlch \ltrch\loch\fs22\lang9\loch\f5
+for(int i=f1;i<n;i++)}
+\par \pard\plain \s0\nowidctlpar\hyphpar0\cf0\kerning1\dbch\af6\langfe2052\dbch\af7\afs24\alang1081\loch\f3\fs24\lang16393\sl276\slmult1\sb0\sa200{\rtlch \ltrch\fs22\lang9\loch\f5
+    }{\rtlch \ltrch\loch\fs22\lang9\loch\f5
+\{}
+\par \pard\plain \s0\nowidctlpar\hyphpar0\cf0\kerning1\dbch\af6\langfe2052\dbch\af7\afs24\alang1081\loch\f3\fs24\lang16393\sl276\slmult1\sb0\sa200{\rtlch \ltrch\fs22\lang9\loch\f5
+        }{\rtlch \ltrch\loch\fs22\lang9\loch\f5
+vertex[i]=vertex[i+1];}
+\par \pard\plain \s0\nowidctlpar\hyphpar0\cf0\kerning1\dbch\af6\langfe2052\dbch\af7\afs24\alang1081\loch\f3\fs24\lang16393\sl276\slmult1\sb0\sa200{\rtlch \ltrch\fs22\lang9\loch\f5
+    }{\rtlch \ltrch\loch\fs22\lang9\loch\f5
+\}}
+\par \pard\plain \s0\nowidctlpar\hyphpar0\cf0\kerning1\dbch\af6\langfe2052\dbch\af7\afs24\alang1081\loch\f3\fs24\lang16393\sl276\slmult1\sb0\sa200{\rtlch \ltrch\fs22\lang9\loch\f5
+    }{\rtlch \ltrch\loch\fs22\lang9\loch\f5
+n=n-1;}
+\par \pard\plain \s0\nowidctlpar\hyphpar0\cf0\kerning1\dbch\af6\langfe2052\dbch\af7\afs24\alang1081\loch\f3\fs24\lang16393\sl276\slmult1\sb0\sa200{\rtlch \ltrch\fs22\lang9\loch\f5
+    }{\rtlch \ltrch\loch\fs22\lang9\loch\f5
+for(int i=0;i<n;i++)}
+\par \pard\plain \s0\nowidctlpar\hyphpar0\cf0\kerning1\dbch\af6\langfe2052\dbch\af7\afs24\alang1081\loch\f3\fs24\lang16393\sl276\slmult1\sb0\sa200{\rtlch \ltrch\fs22\lang9\loch\f5
+    }{\rtlch \ltrch\loch\fs22\lang9\loch\f5
+\{}
+\par \pard\plain \s0\nowidctlpar\hyphpar0\cf0\kerning1\dbch\af6\langfe2052\dbch\af7\afs24\alang1081\loch\f3\fs24\lang16393\sl276\slmult1\sb0\sa200{\rtlch \ltrch\fs22\lang9\loch\f5
+        }{\rtlch \ltrch\loch\fs22\lang9\loch\f5
+node *temp=vertex[i];}
+\par \pard\plain \s0\nowidctlpar\hyphpar0\cf0\kerning1\dbch\af6\langfe2052\dbch\af7\afs24\alang1081\loch\f3\fs24\lang16393\sl276\slmult1\sb0\sa200{\rtlch \ltrch\fs22\lang9\loch\f5
+        }{\rtlch \ltrch\loch\fs22\lang9\loch\f5
+node *p;}
+\par \pard\plain \s0\nowidctlpar\hyphpar0\cf0\kerning1\dbch\af6\langfe2052\dbch\af7\afs24\alang1081\loch\f3\fs24\lang16393\sl276\slmult1\sb0\sa200{\rtlch \ltrch\fs22\lang9\loch\f5
+        }{\rtlch \ltrch\loch\fs22\lang9\loch\f5
+while(temp!=NULL)}
+\par \pard\plain \s0\nowidctlpar\hyphpar0\cf0\kerning1\dbch\af6\langfe2052\dbch\af7\afs24\alang1081\loch\f3\fs24\lang16393\sl276\slmult1\sb0\sa200{\rtlch \ltrch\fs22\lang9\loch\f5
+        }{\rtlch \ltrch\loch\fs22\lang9\loch\f5
+\{}
+\par \pard\plain \s0\nowidctlpar\hyphpar0\cf0\kerning1\dbch\af6\langfe2052\dbch\af7\afs24\alang1081\loch\f3\fs24\lang16393\sl276\slmult1\sb0\sa200{\rtlch \ltrch\fs22\lang9\loch\f5
+            }{\rtlch \ltrch\loch\fs22\lang9\loch\f5
+if(strcmp(temp->name,vert)!=0)}
+\par \pard\plain \s0\nowidctlpar\hyphpar0\cf0\kerning1\dbch\af6\langfe2052\dbch\af7\afs24\alang1081\loch\f3\fs24\lang16393\sl276\slmult1\sb0\sa200{\rtlch \ltrch\fs22\lang9\loch\f5
+            }{\rtlch \ltrch\loch\fs22\lang9\loch\f5
+\{}
+\par \pard\plain \s0\nowidctlpar\hyphpar0\cf0\kerning1\dbch\af6\langfe2052\dbch\af7\afs24\alang1081\loch\f3\fs24\lang16393\sl276\slmult1\sb0\sa200{\rtlch \ltrch\fs22\lang9\loch\f5
+                }{\rtlch \ltrch\loch\fs22\lang9\loch\f5
+p=temp;}
+\par \pard\plain \s0\nowidctlpar\hyphpar0\cf0\kerning1\dbch\af6\langfe2052\dbch\af7\afs24\alang1081\loch\f3\fs24\lang16393\sl276\slmult1\sb0\sa200{\rtlch \ltrch\fs22\lang9\loch\f5
+                }{\rtlch \ltrch\loch\fs22\lang9\loch\f5
+temp=temp->next;}
+\par \pard\plain \s0\nowidctlpar\hyphpar0\cf0\kerning1\dbch\af6\langfe2052\dbch\af7\afs24\alang1081\loch\f3\fs24\lang16393\sl276\slmult1\sb0\sa200{\rtlch \ltrch\fs22\lang9\loch\f5
+            }{\rtlch \ltrch\loch\fs22\lang9\loch\f5
+\}}
+\par \pard\plain \s0\nowidctlpar\hyphpar0\cf0\kerning1\dbch\af6\langfe2052\dbch\af7\afs24\alang1081\loch\f3\fs24\lang16393\sl276\slmult1\sb0\sa200{\rtlch \ltrch\fs22\lang9\loch\f5
+            }{\rtlch \ltrch\loch\fs22\lang9\loch\f5
+else}
+\par \pard\plain \s0\nowidctlpar\hyphpar0\cf0\kerning1\dbch\af6\langfe2052\dbch\af7\afs24\alang1081\loch\f3\fs24\lang16393\sl276\slmult1\sb0\sa200{\rtlch \ltrch\fs22\lang9\loch\f5
+            }{\rtlch \ltrch\loch\fs22\lang9\loch\f5
+\{}
+\par \pard\plain \s0\nowidctlpar\hyphpar0\cf0\kerning1\dbch\af6\langfe2052\dbch\af7\afs24\alang1081\loch\f3\fs24\lang16393\sl276\slmult1\sb0\sa200{\rtlch \ltrch\fs22\lang9\loch\f5
+                }{\rtlch \ltrch\loch\fs22\lang9\loch\f5
+p->next=temp->next;}
+\par \pard\plain \s0\nowidctlpar\hyphpar0\cf0\kerning1\dbch\af6\langfe2052\dbch\af7\afs24\alang1081\loch\f3\fs24\lang16393\sl276\slmult1\sb0\sa200{\rtlch \ltrch\fs22\lang9\loch\f5
+                }{\rtlch \ltrch\loch\fs22\lang9\loch\f5
+break;}
+\par \pard\plain \s0\nowidctlpar\hyphpar0\cf0\kerning1\dbch\af6\langfe2052\dbch\af7\afs24\alang1081\loch\f3\fs24\lang16393\sl276\slmult1\sb0\sa200{\rtlch \ltrch\fs22\lang9\loch\f5
+            }{\rtlch \ltrch\loch\fs22\lang9\loch\f5
+\}}
+\par \pard\plain \s0\nowidctlpar\hyphpar0\cf0\kerning1\dbch\af6\langfe2052\dbch\af7\afs24\alang1081\loch\f3\fs24\lang16393\sl276\slmult1\sb0\sa200{\rtlch \ltrch\fs22\lang9\loch\f5
+        }{\rtlch \ltrch\loch\fs22\lang9\loch\f5
+\}}
+\par \pard\plain \s0\nowidctlpar\hyphpar0\cf0\kerning1\dbch\af6\langfe2052\dbch\af7\afs24\alang1081\loch\f3\fs24\lang16393\sl276\slmult1\sb0\sa200{\rtlch \ltrch\fs22\lang9\loch\f5
+    }{\rtlch \ltrch\loch\fs22\lang9\loch\f5
+\}}
+\par \pard\plain \s0\nowidctlpar\hyphpar0\cf0\kerning1\dbch\af6\langfe2052\dbch\af7\afs24\alang1081\loch\f3\fs24\lang16393\sl276\slmult1\sb0\sa200{\rtlch \ltrch\fs22\lang9\loch\f5
+    }{\rtlch \ltrch\loch\fs22\lang9\loch\f5
+\}}
+\par \pard\plain \s0\nowidctlpar\hyphpar0\cf0\kerning1\dbch\af6\langfe2052\dbch\af7\afs24\alang1081\loch\f3\fs24\lang16393\sl276\slmult1\sb0\sa200{\rtlch \ltrch\loch\fs22\lang9\loch\f5
+\}}
+\par \pard\plain \s0\nowidctlpar\hyphpar0\cf0\kerning1\dbch\af6\langfe2052\dbch\af7\afs24\alang1081\loch\f3\fs24\lang16393\sl276\slmult1\sb0\sa200\rtlch \ltrch\loch\fs22\lang9\loch\f5
+
+\par \pard\plain \s0\nowidctlpar\hyphpar0\cf0\kerning1\dbch\af6\langfe2052\dbch\af7\afs24\alang1081\loch\f3\fs24\lang16393\sl276\slmult1\sb0\sa200{\rtlch \ltrch\loch\fs22\lang9\loch\f5
+void graph::indegree_outdegree()}
+\par \pard\plain \s0\nowidctlpar\hyphpar0\cf0\kerning1\dbch\af6\langfe2052\dbch\af7\afs24\alang1081\loch\f3\fs24\lang16393\sl276\slmult1\sb0\sa200{\rtlch \ltrch\loch\fs22\lang9\loch\f5
+\{}
+\par \pard\plain \s0\nowidctlpar\hyphpar0\cf0\kerning1\dbch\af6\langfe2052\dbch\af7\afs24\alang1081\loch\f3\fs24\lang16393\sl276\slmult1\sb0\sa200{\rtlch \ltrch\fs22\lang9\loch\f5
+    }{\rtlch \ltrch\loch\fs22\lang9\loch\f5
+if(directed==0)}
+\par \pard\plain \s0\nowidctlpar\hyphpar0\cf0\kerning1\dbch\af6\langfe2052\dbch\af7\afs24\alang1081\loch\f3\fs24\lang16393\sl276\slmult1\sb0\sa200{\rtlch \ltrch\fs22\lang9\loch\f5
+    }{\rtlch \ltrch\loch\fs22\lang9\loch\f5
+\{}
+\par \pard\plain \s0\nowidctlpar\hyphpar0\cf0\kerning1\dbch\af6\langfe2052\dbch\af7\afs24\alang1081\loch\f3\fs24\lang16393\sl276\slmult1\sb0\sa200{\rtlch \ltrch\fs22\lang9\loch\f5
+        }{\rtlch \ltrch\loch\fs22\lang9\loch\f5
+for(int i=0;i<n;i++)}
+\par \pard\plain \s0\nowidctlpar\hyphpar0\cf0\kerning1\dbch\af6\langfe2052\dbch\af7\afs24\alang1081\loch\f3\fs24\lang16393\sl276\slmult1\sb0\sa200{\rtlch \ltrch\fs22\lang9\loch\f5
+        }{\rtlch \ltrch\loch\fs22\lang9\loch\f5
+\{}
+\par \pard\plain \s0\nowidctlpar\hyphpar0\cf0\kerning1\dbch\af6\langfe2052\dbch\af7\afs24\alang1081\loch\f3\fs24\lang16393\sl276\slmult1\sb0\sa200{\rtlch \ltrch\fs22\lang9\loch\f5
+            }{\rtlch \ltrch\loch\fs22\lang9\loch\f5
+node *temp=vertex[i];}
+\par \pard\plain \s0\nowidctlpar\hyphpar0\cf0\kerning1\dbch\af6\langfe2052\dbch\af7\afs24\alang1081\loch\f3\fs24\lang16393\sl276\slmult1\sb0\sa200{\rtlch \ltrch\fs22\lang9\loch\f5
+            }{\rtlch \ltrch\loch\fs22\lang9\loch\f5
+int cnt=0;}
+\par \pard\plain \s0\nowidctlpar\hyphpar0\cf0\kerning1\dbch\af6\langfe2052\dbch\af7\afs24\alang1081\loch\f3\fs24\lang16393\sl276\slmult1\sb0\sa200{\rtlch \ltrch\fs22\lang9\loch\f5
+            }{\rtlch \ltrch\loch\fs22\lang9\loch\f5
+while(temp->next!=NULL)}
+\par \pard\plain \s0\nowidctlpar\hyphpar0\cf0\kerning1\dbch\af6\langfe2052\dbch\af7\afs24\alang1081\loch\f3\fs24\lang16393\sl276\slmult1\sb0\sa200{\rtlch \ltrch\fs22\lang9\loch\f5
+            }{\rtlch \ltrch\loch\fs22\lang9\loch\f5
+\{}
+\par \pard\plain \s0\nowidctlpar\hyphpar0\cf0\kerning1\dbch\af6\langfe2052\dbch\af7\afs24\alang1081\loch\f3\fs24\lang16393\sl276\slmult1\sb0\sa200{\rtlch \ltrch\fs22\lang9\loch\f5
+                }{\rtlch \ltrch\loch\fs22\lang9\loch\f5
+cnt++;}
+\par \pard\plain \s0\nowidctlpar\hyphpar0\cf0\kerning1\dbch\af6\langfe2052\dbch\af7\afs24\alang1081\loch\f3\fs24\lang16393\sl276\slmult1\sb0\sa200{\rtlch \ltrch\fs22\lang9\loch\f5
+                }{\rtlch \ltrch\loch\fs22\lang9\loch\f5
+temp=temp->next;}
+\par \pard\plain \s0\nowidctlpar\hyphpar0\cf0\kerning1\dbch\af6\langfe2052\dbch\af7\afs24\alang1081\loch\f3\fs24\lang16393\sl276\slmult1\sb0\sa200{\rtlch \ltrch\fs22\lang9\loch\f5
+            }{\rtlch \ltrch\loch\fs22\lang9\loch\f5
+\}}
+\par \pard\plain \s0\nowidctlpar\hyphpar0\cf0\kerning1\dbch\af6\langfe2052\dbch\af7\afs24\alang1081\loch\f3\fs24\lang16393\sl276\slmult1\sb0\sa200{\rtlch \ltrch\fs22\lang9\loch\f5
+            }{\rtlch \ltrch\loch\fs22\lang9\loch\f5
+cout<<"\\n"<<i+1<<") "<<vertex[i]->name;}
+\par \pard\plain \s0\nowidctlpar\hyphpar0\cf0\kerning1\dbch\af6\langfe2052\dbch\af7\afs24\alang1081\loch\f3\fs24\lang16393\sl276\slmult1\sb0\sa200{\rtlch \ltrch\fs22\lang9\loch\f5
+            }{\rtlch \ltrch\loch\fs22\lang9\loch\f5
+cout<<"\\nIndegree -:"<<cnt;}
+\par \pard\plain \s0\nowidctlpar\hyphpar0\cf0\kerning1\dbch\af6\langfe2052\dbch\af7\afs24\alang1081\loch\f3\fs24\lang16393\sl276\slmult1\sb0\sa200{\rtlch \ltrch\fs22\lang9\loch\f5
+            }{\rtlch \ltrch\loch\fs22\lang9\loch\f5
+cout<<"\\t\\t outdegree -:"<<cnt;}
+\par \pard\plain \s0\nowidctlpar\hyphpar0\cf0\kerning1\dbch\af6\langfe2052\dbch\af7\afs24\alang1081\loch\f3\fs24\lang16393\sl276\slmult1\sb0\sa200{\rtlch \ltrch\fs22\lang9\loch\f5
+        }{\rtlch \ltrch\loch\fs22\lang9\loch\f5
+\}}
+\par \pard\plain \s0\nowidctlpar\hyphpar0\cf0\kerning1\dbch\af6\langfe2052\dbch\af7\afs24\alang1081\loch\f3\fs24\lang16393\sl276\slmult1\sb0\sa200{\rtlch \ltrch\fs22\lang9\loch\f5
+    }{\rtlch \ltrch\loch\fs22\lang9\loch\f5
+\}}
+\par \pard\plain \s0\nowidctlpar\hyphpar0\cf0\kerning1\dbch\af6\langfe2052\dbch\af7\afs24\alang1081\loch\f3\fs24\lang16393\sl276\slmult1\sb0\sa200\rtlch \ltrch\loch\fs22\lang9\loch\f5
+
+\par \pard\plain \s0\nowidctlpar\hyphpar0\cf0\kerning1\dbch\af6\langfe2052\dbch\af7\afs24\alang1081\loch\f3\fs24\lang16393\sl276\slmult1\sb0\sa200{\rtlch \ltrch\fs22\lang9\loch\f5
+    }{\rtlch \ltrch\loch\fs22\lang9\loch\f5
+else if(directed==1)}
+\par \pard\plain \s0\nowidctlpar\hyphpar0\cf0\kerning1\dbch\af6\langfe2052\dbch\af7\afs24\alang1081\loch\f3\fs24\lang16393\sl276\slmult1\sb0\sa200{\rtlch \ltrch\fs22\lang9\loch\f5
+    }{\rtlch \ltrch\loch\fs22\lang9\loch\f5
+\{}
+\par \pard\plain \s0\nowidctlpar\hyphpar0\cf0\kerning1\dbch\af6\langfe2052\dbch\af7\afs24\alang1081\loch\f3\fs24\lang16393\sl276\slmult1\sb0\sa200{\rtlch \ltrch\fs22\lang9\loch\f5
+        }{\rtlch \ltrch\loch\fs22\lang9\loch\f5
+int indeg[20];}
+\par \pard\plain \s0\nowidctlpar\hyphpar0\cf0\kerning1\dbch\af6\langfe2052\dbch\af7\afs24\alang1081\loch\f3\fs24\lang16393\sl276\slmult1\sb0\sa200{\rtlch \ltrch\fs22\lang9\loch\f5
+        }{\rtlch \ltrch\loch\fs22\lang9\loch\f5
+for(int i=0;i<n;i++)}
+\par \pard\plain \s0\nowidctlpar\hyphpar0\cf0\kerning1\dbch\af6\langfe2052\dbch\af7\afs24\alang1081\loch\f3\fs24\lang16393\sl276\slmult1\sb0\sa200{\rtlch \ltrch\fs22\lang9\loch\f5
+        }{\rtlch \ltrch\loch\fs22\lang9\loch\f5
+\{}
+\par \pard\plain \s0\nowidctlpar\hyphpar0\cf0\kerning1\dbch\af6\langfe2052\dbch\af7\afs24\alang1081\loch\f3\fs24\lang16393\sl276\slmult1\sb0\sa200{\rtlch \ltrch\fs22\lang9\loch\f5
+            }{\rtlch \ltrch\loch\fs22\lang9\loch\f5
+indeg[i]=0;}
+\par \pard\plain \s0\nowidctlpar\hyphpar0\cf0\kerning1\dbch\af6\langfe2052\dbch\af7\afs24\alang1081\loch\f3\fs24\lang16393\sl276\slmult1\sb0\sa200{\rtlch \ltrch\fs22\lang9\loch\f5
+        }{\rtlch \ltrch\loch\fs22\lang9\loch\f5
+\}}
+\par \pard\plain \s0\nowidctlpar\hyphpar0\cf0\kerning1\dbch\af6\langfe2052\dbch\af7\afs24\alang1081\loch\f3\fs24\lang16393\sl276\slmult1\sb0\sa200{\rtlch \ltrch\fs22\lang9\loch\f5
+        }{\rtlch \ltrch\loch\fs22\lang9\loch\f5
+for(int i=0;i<n;i++)}
+\par \pard\plain \s0\nowidctlpar\hyphpar0\cf0\kerning1\dbch\af6\langfe2052\dbch\af7\afs24\alang1081\loch\f3\fs24\lang16393\sl276\slmult1\sb0\sa200{\rtlch \ltrch\fs22\lang9\loch\f5
+        }{\rtlch \ltrch\loch\fs22\lang9\loch\f5
+\{}
+\par \pard\plain \s0\nowidctlpar\hyphpar0\cf0\kerning1\dbch\af6\langfe2052\dbch\af7\afs24\alang1081\loch\f3\fs24\lang16393\sl276\slmult1\sb0\sa200{\rtlch \ltrch\fs22\lang9\loch\f5
+            }{\rtlch \ltrch\loch\fs22\lang9\loch\f5
+node *temp=vertex[i];}
+\par \pard\plain \s0\nowidctlpar\hyphpar0\cf0\kerning1\dbch\af6\langfe2052\dbch\af7\afs24\alang1081\loch\f3\fs24\lang16393\sl276\slmult1\sb0\sa200{\rtlch \ltrch\fs22\lang9\loch\f5
+            }{\rtlch \ltrch\loch\fs22\lang9\loch\f5
+int cnt=0;}
+\par \pard\plain \s0\nowidctlpar\hyphpar0\cf0\kerning1\dbch\af6\langfe2052\dbch\af7\afs24\alang1081\loch\f3\fs24\lang16393\sl276\slmult1\sb0\sa200{\rtlch \ltrch\fs22\lang9\loch\f5
+            }{\rtlch \ltrch\loch\fs22\lang9\loch\f5
+while(temp->next!=NULL)}
+\par \pard\plain \s0\nowidctlpar\hyphpar0\cf0\kerning1\dbch\af6\langfe2052\dbch\af7\afs24\alang1081\loch\f3\fs24\lang16393\sl276\slmult1\sb0\sa200{\rtlch \ltrch\fs22\lang9\loch\f5
+            }{\rtlch \ltrch\loch\fs22\lang9\loch\f5
+\{}
+\par \pard\plain \s0\nowidctlpar\hyphpar0\cf0\kerning1\dbch\af6\langfe2052\dbch\af7\afs24\alang1081\loch\f3\fs24\lang16393\sl276\slmult1\sb0\sa200{\rtlch \ltrch\fs22\lang9\loch\f5
+                }{\rtlch \ltrch\loch\fs22\lang9\loch\f5
+cnt++;}
+\par \pard\plain \s0\nowidctlpar\hyphpar0\cf0\kerning1\dbch\af6\langfe2052\dbch\af7\afs24\alang1081\loch\f3\fs24\lang16393\sl276\slmult1\sb0\sa200{\rtlch \ltrch\fs22\lang9\loch\f5
+                }{\rtlch \ltrch\loch\fs22\lang9\loch\f5
+temp=temp->next;}
+\par \pard\plain \s0\nowidctlpar\hyphpar0\cf0\kerning1\dbch\af6\langfe2052\dbch\af7\afs24\alang1081\loch\f3\fs24\lang16393\sl276\slmult1\sb0\sa200{\rtlch \ltrch\fs22\lang9\loch\f5
+            }{\rtlch \ltrch\loch\fs22\lang9\loch\f5
+\}}
+\par \pard\plain \s0\nowidctlpar\hyphpar0\cf0\kerning1\dbch\af6\langfe2052\dbch\af7\afs24\alang1081\loch\f3\fs24\lang16393\sl276\slmult1\sb0\sa200{\rtlch \ltrch\fs22\lang9\loch\f5
+            }{\rtlch \ltrch\loch\fs22\lang9\loch\f5
+cout<<"\\n"<<i+1<<") "<<vertex[i]->name;}
+\par \pard\plain \s0\nowidctlpar\hyphpar0\cf0\kerning1\dbch\af6\langfe2052\dbch\af7\afs24\alang1081\loch\f3\fs24\lang16393\sl276\slmult1\sb0\sa200{\rtlch \ltrch\fs22\lang9\loch\f5
+            }{\rtlch \ltrch\loch\fs22\lang9\loch\f5
+cout<<"\\n outdegree -:"<<cnt;}
+\par \pard\plain \s0\nowidctlpar\hyphpar0\cf0\kerning1\dbch\af6\langfe2052\dbch\af7\afs24\alang1081\loch\f3\fs24\lang16393\sl276\slmult1\sb0\sa200{\rtlch \ltrch\fs22\lang9\loch\f5
+        }{\rtlch \ltrch\loch\fs22\lang9\loch\f5
+\}}
+\par \pard\plain \s0\nowidctlpar\hyphpar0\cf0\kerning1\dbch\af6\langfe2052\dbch\af7\afs24\alang1081\loch\f3\fs24\lang16393\sl276\slmult1\sb0\sa200\rtlch \ltrch\loch\fs22\lang9\loch\f5
+
+\par \pard\plain \s0\nowidctlpar\hyphpar0\cf0\kerning1\dbch\af6\langfe2052\dbch\af7\afs24\alang1081\loch\f3\fs24\lang16393\sl276\slmult1\sb0\sa200{\rtlch \ltrch\fs22\lang9\loch\f5
+        }{\rtlch \ltrch\loch\fs22\lang9\loch\f5
+for(int i=0;i<n;i++)}
+\par \pard\plain \s0\nowidctlpar\hyphpar0\cf0\kerning1\dbch\af6\langfe2052\dbch\af7\afs24\alang1081\loch\f3\fs24\lang16393\sl276\slmult1\sb0\sa200{\rtlch \ltrch\fs22\lang9\loch\f5
+        }{\rtlch \ltrch\loch\fs22\lang9\loch\f5
+\{}
+\par \pard\plain \s0\nowidctlpar\hyphpar0\cf0\kerning1\dbch\af6\langfe2052\dbch\af7\afs24\alang1081\loch\f3\fs24\lang16393\sl276\slmult1\sb0\sa200{\rtlch \ltrch\fs22\lang9\loch\f5
+            }{\rtlch \ltrch\loch\fs22\lang9\loch\f5
+node *temp=vertex[i];}
+\par \pard\plain \s0\nowidctlpar\hyphpar0\cf0\kerning1\dbch\af6\langfe2052\dbch\af7\afs24\alang1081\loch\f3\fs24\lang16393\sl276\slmult1\sb0\sa200{\rtlch \ltrch\fs22\lang9\loch\f5
+            }{\rtlch \ltrch\loch\fs22\lang9\loch\f5
+temp=temp->next;}
+\par \pard\plain \s0\nowidctlpar\hyphpar0\cf0\kerning1\dbch\af6\langfe2052\dbch\af7\afs24\alang1081\loch\f3\fs24\lang16393\sl276\slmult1\sb0\sa200{\rtlch \ltrch\fs22\lang9\loch\f5
+            }{\rtlch \ltrch\loch\fs22\lang9\loch\f5
+while(temp!=NULL)}
+\par \pard\plain \s0\nowidctlpar\hyphpar0\cf0\kerning1\dbch\af6\langfe2052\dbch\af7\afs24\alang1081\loch\f3\fs24\lang16393\sl276\slmult1\sb0\sa200{\rtlch \ltrch\fs22\lang9\loch\f5
+            }{\rtlch \ltrch\loch\fs22\lang9\loch\f5
+\{}
+\par \pard\plain \s0\nowidctlpar\hyphpar0\cf0\kerning1\dbch\af6\langfe2052\dbch\af7\afs24\alang1081\loch\f3\fs24\lang16393\sl276\slmult1\sb0\sa200{\rtlch \ltrch\fs22\lang9\loch\f5
+                }{\rtlch \ltrch\loch\fs22\lang9\loch\f5
+indeg[check(temp->name)]++;}
+\par \pard\plain \s0\nowidctlpar\hyphpar0\cf0\kerning1\dbch\af6\langfe2052\dbch\af7\afs24\alang1081\loch\f3\fs24\lang16393\sl276\slmult1\sb0\sa200{\rtlch \ltrch\fs22\lang9\loch\f5
+                }{\rtlch \ltrch\loch\fs22\lang9\loch\f5
+temp=temp->next;}
+\par \pard\plain \s0\nowidctlpar\hyphpar0\cf0\kerning1\dbch\af6\langfe2052\dbch\af7\afs24\alang1081\loch\f3\fs24\lang16393\sl276\slmult1\sb0\sa200{\rtlch \ltrch\fs22\lang9\loch\f5
+            }{\rtlch \ltrch\loch\fs22\lang9\loch\f5
+\}}
+\par \pard\plain \s0\nowidctlpar\hyphpar0\cf0\kerning1\dbch\af6\langfe2052\dbch\af7\afs24\alang1081\loch\f3\fs24\lang16393\sl276\slmult1\sb0\sa200{\rtlch \ltrch\fs22\lang9\loch\f5
+        }{\rtlch \ltrch\loch\fs22\lang9\loch\f5
+\}}
+\par \pard\plain \s0\nowidctlpar\hyphpar0\cf0\kerning1\dbch\af6\langfe2052\dbch\af7\afs24\alang1081\loch\f3\fs24\lang16393\sl276\slmult1\sb0\sa200{\rtlch \ltrch\fs22\lang9\loch\f5
+        }{\rtlch \ltrch\loch\fs22\lang9\loch\f5
+for(int i=0;i<n;i++)}
+\par \pard\plain \s0\nowidctlpar\hyphpar0\cf0\kerning1\dbch\af6\langfe2052\dbch\af7\afs24\alang1081\loch\f3\fs24\lang16393\sl276\slmult1\sb0\sa200{\rtlch \ltrch\fs22\lang9\loch\f5
+        }{\rtlch \ltrch\loch\fs22\lang9\loch\f5
+\{}
+\par \pard\plain \s0\nowidctlpar\hyphpar0\cf0\kerning1\dbch\af6\langfe2052\dbch\af7\afs24\alang1081\loch\f3\fs24\lang16393\sl276\slmult1\sb0\sa200{\rtlch \ltrch\fs22\lang9\loch\f5
+             }{\rtlch \ltrch\loch\fs22\lang9\loch\f5
+cout<<"\\n"<<i+1<<") "<<vertex[i]->name;}
+\par \pard\plain \s0\nowidctlpar\hyphpar0\cf0\kerning1\dbch\af6\langfe2052\dbch\af7\afs24\alang1081\loch\f3\fs24\lang16393\sl276\slmult1\sb0\sa200{\rtlch \ltrch\fs22\lang9\loch\f5
+             }{\rtlch \ltrch\loch\fs22\lang9\loch\f5
+cout<<"\\nIndegree-: "<<indeg[i];}
+\par \pard\plain \s0\nowidctlpar\hyphpar0\cf0\kerning1\dbch\af6\langfe2052\dbch\af7\afs24\alang1081\loch\f3\fs24\lang16393\sl276\slmult1\sb0\sa200{\rtlch \ltrch\fs22\lang9\loch\f5
+        }{\rtlch \ltrch\loch\fs22\lang9\loch\f5
+\}}
+\par \pard\plain \s0\nowidctlpar\hyphpar0\cf0\kerning1\dbch\af6\langfe2052\dbch\af7\afs24\alang1081\loch\f3\fs24\lang16393\sl276\slmult1\sb0\sa200{\rtlch \ltrch\fs22\lang9\loch\f5
+    }{\rtlch \ltrch\loch\fs22\lang9\loch\f5
+\}}
+\par \pard\plain \s0\nowidctlpar\hyphpar0\cf0\kerning1\dbch\af6\langfe2052\dbch\af7\afs24\alang1081\loch\f3\fs24\lang16393\sl276\slmult1\sb0\sa200{\rtlch \ltrch\loch\fs22\lang9\loch\f5
+\}}
+\par \pard\plain \s0\nowidctlpar\hyphpar0\cf0\kerning1\dbch\af6\langfe2052\dbch\af7\afs24\alang1081\loch\f3\fs24\lang16393\sl276\slmult1\sb0\sa200{\rtlch \ltrch\loch\fs22\lang9\loch\f5
+int main()}
+\par \pard\plain \s0\nowidctlpar\hyphpar0\cf0\kerning1\dbch\af6\langfe2052\dbch\af7\afs24\alang1081\loch\f3\fs24\lang16393\sl276\slmult1\sb0\sa200{\rtlch \ltrch\loch\fs22\lang9\loch\f5
+\{}
+\par \pard\plain \s0\nowidctlpar\hyphpar0\cf0\kerning1\dbch\af6\langfe2052\dbch\af7\afs24\alang1081\loch\f3\fs24\lang16393\sl276\slmult1\sb0\sa200{\rtlch \ltrch\loch\fs22\lang9\loch\f5
+\tab graph g;}
+\par \pard\plain \s0\nowidctlpar\hyphpar0\cf0\kerning1\dbch\af6\langfe2052\dbch\af7\afs24\alang1081\loch\f3\fs24\lang16393\sl276\slmult1\sb0\sa200{\rtlch \ltrch\loch\fs22\lang9\loch\f5
+\tab int ch,n;}
+\par \pard\plain \s0\nowidctlpar\hyphpar0\cf0\kerning1\dbch\af6\langfe2052\dbch\af7\afs24\alang1081\loch\f3\fs24\lang16393\sl276\slmult1\sb0\sa200{\rtlch \ltrch\loch\fs22\lang9\loch\f5
+\tab char initial[30],finl[30];}
+\par \pard\plain \s0\nowidctlpar\hyphpar0\cf0\kerning1\dbch\af6\langfe2052\dbch\af7\afs24\alang1081\loch\f3\fs24\lang16393\sl276\slmult1\sb0\sa200{\rtlch \ltrch\loch\fs22\lang9\loch\f5
+\tab float wt;}
+\par \pard\plain \s0\nowidctlpar\hyphpar0\cf0\kerning1\dbch\af6\langfe2052\dbch\af7\afs24\alang1081\loch\f3\fs24\lang16393\sl276\slmult1\sb0\sa200{\rtlch \ltrch\loch\fs22\lang9\loch\f5
+\tab g.initialize();}
+\par \pard\plain \s0\nowidctlpar\hyphpar0\cf0\kerning1\dbch\af6\langfe2052\dbch\af7\afs24\alang1081\loch\f3\fs24\lang16393\sl276\slmult1\sb0\sa200\rtlch \ltrch\loch\fs22\lang9\loch\f5
+
+\par \pard\plain \s0\nowidctlpar\hyphpar0\cf0\kerning1\dbch\af6\langfe2052\dbch\af7\afs24\alang1081\loch\f3\fs24\lang16393\sl276\slmult1\sb0\sa200{\rtlch \ltrch\loch\fs22\lang9\loch\f5
+\tab while(1)}
+\par \pard\plain \s0\nowidctlpar\hyphpar0\cf0\kerning1\dbch\af6\langfe2052\dbch\af7\afs24\alang1081\loch\f3\fs24\lang16393\sl276\slmult1\sb0\sa200{\rtlch \ltrch\loch\fs22\lang9\loch\f5
+\tab \{}
+\par \pard\plain \s0\nowidctlpar\hyphpar0\cf0\kerning1\dbch\af6\langfe2052\dbch\af7\afs24\alang1081\loch\f3\fs24\lang16393\sl276\slmult1\sb0\sa200{\rtlch \ltrch\loch\fs22\lang9\loch\f5
+\tab \tab cout<<"\\n\\n\\n1.Add new Edge \\n2.Display \\n3.Add new vertex \\n4.Delete an Edge \\n5.Delete a vertex \\n6.Find Indegree and Outdegree \\n7.Exit";}
+\par \pard\plain \s0\nowidctlpar\hyphpar0\cf0\kerning1\dbch\af6\langfe2052\dbch\af7\afs24\alang1081\loch\f3\fs24\lang16393\sl276\slmult1\sb0\sa200{\rtlch \ltrch\loch\fs22\lang9\loch\f5
+\tab \tab cin>>ch;}
+\par \pard\plain \s0\nowidctlpar\hyphpar0\cf0\kerning1\dbch\af6\langfe2052\dbch\af7\afs24\alang1081\loch\f3\fs24\lang16393\sl276\slmult1\sb0\sa200{\rtlch \ltrch\loch\fs22\lang9\loch\f5
+\tab \tab switch(ch)}
+\par \pard\plain \s0\nowidctlpar\hyphpar0\cf0\kerning1\dbch\af6\langfe2052\dbch\af7\afs24\alang1081\loch\f3\fs24\lang16393\sl276\slmult1\sb0\sa200{\rtlch \ltrch\loch\fs22\lang9\loch\f5
+\tab \tab \{}
+\par \pard\plain \s0\nowidctlpar\hyphpar0\cf0\kerning1\dbch\af6\langfe2052\dbch\af7\afs24\alang1081\loch\f3\fs24\lang16393\sl276\slmult1\sb0\sa200{\rtlch \ltrch\loch\fs22\lang9\loch\f5
+\tab \tab case 1:}
+\par \pard\plain \s0\nowidctlpar\hyphpar0\cf0\kerning1\dbch\af6\langfe2052\dbch\af7\afs24\alang1081\loch\f3\fs24\lang16393\sl276\slmult1\sb0\sa200{\rtlch \ltrch\loch\fs22\lang9\loch\f5
+\tab \tab \tab cout<<"\\n\\tHow many paths you have to add?";}
+\par \pard\plain \s0\nowidctlpar\hyphpar0\cf0\kerning1\dbch\af6\langfe2052\dbch\af7\afs24\alang1081\loch\f3\fs24\lang16393\sl276\slmult1\sb0\sa200{\rtlch \ltrch\loch\fs22\lang9\loch\f5
+\tab \tab \tab cin>>n;}
+\par \pard\plain \s0\nowidctlpar\hyphpar0\cf0\kerning1\dbch\af6\langfe2052\dbch\af7\afs24\alang1081\loch\f3\fs24\lang16393\sl276\slmult1\sb0\sa200{\rtlch \ltrch\loch\fs22\lang9\loch\f5
+\tab \tab \tab for(int i=0;i<n;i++)}
+\par \pard\plain \s0\nowidctlpar\hyphpar0\cf0\kerning1\dbch\af6\langfe2052\dbch\af7\afs24\alang1081\loch\f3\fs24\lang16393\sl276\slmult1\sb0\sa200{\rtlch \ltrch\loch\fs22\lang9\loch\f5
+\tab \tab \tab \{}
+\par \pard\plain \s0\nowidctlpar\hyphpar0\cf0\kerning1\dbch\af6\langfe2052\dbch\af7\afs24\alang1081\loch\f3\fs24\lang16393\sl276\slmult1\sb0\sa200{\rtlch \ltrch\loch\fs22\lang9\loch\f5
+\tab \tab \tab \tab cout<<"\\nEnter initial node-: ";}
+\par \pard\plain \s0\nowidctlpar\hyphpar0\cf0\kerning1\dbch\af6\langfe2052\dbch\af7\afs24\alang1081\loch\f3\fs24\lang16393\sl276\slmult1\sb0\sa200{\rtlch \ltrch\loch\fs22\lang9\loch\f5
+\tab \tab \tab \tab cin>>initial;}
+\par \pard\plain \s0\nowidctlpar\hyphpar0\cf0\kerning1\dbch\af6\langfe2052\dbch\af7\afs24\alang1081\loch\f3\fs24\lang16393\sl276\slmult1\sb0\sa200{\rtlch \ltrch\loch\fs22\lang9\loch\f5
+\tab \tab \tab \tab cout<<"\\nEnter final node-: ";}
+\par \pard\plain \s0\nowidctlpar\hyphpar0\cf0\kerning1\dbch\af6\langfe2052\dbch\af7\afs24\alang1081\loch\f3\fs24\lang16393\sl276\slmult1\sb0\sa200{\rtlch \ltrch\loch\fs22\lang9\loch\f5
+\tab \tab \tab \tab cin>>finl;}
+\par \pard\plain \s0\nowidctlpar\hyphpar0\cf0\kerning1\dbch\af6\langfe2052\dbch\af7\afs24\alang1081\loch\f3\fs24\lang16393\sl276\slmult1\sb0\sa200{\rtlch \ltrch\loch\fs22\lang9\loch\f5
+\tab \tab \tab \tab cout<<"\\nEnter weight of path-:";}
+\par \pard\plain \s0\nowidctlpar\hyphpar0\cf0\kerning1\dbch\af6\langfe2052\dbch\af7\afs24\alang1081\loch\f3\fs24\lang16393\sl276\slmult1\sb0\sa200{\rtlch \ltrch\loch\fs22\lang9\loch\f5
+\tab \tab \tab \tab cin>>wt;}
+\par \pard\plain \s0\nowidctlpar\hyphpar0\cf0\kerning1\dbch\af6\langfe2052\dbch\af7\afs24\alang1081\loch\f3\fs24\lang16393\sl276\slmult1\sb0\sa200{\rtlch \ltrch\loch\fs22\lang9\loch\f5
+\tab \tab \tab \tab g.create(finl,initial,wt);}
+\par \pard\plain \s0\nowidctlpar\hyphpar0\cf0\kerning1\dbch\af6\langfe2052\dbch\af7\afs24\alang1081\loch\f3\fs24\lang16393\sl276\slmult1\sb0\sa200{\rtlch \ltrch\loch\fs22\lang9\loch\f5
+\tab \tab \tab \}}
+\par \pard\plain \s0\nowidctlpar\hyphpar0\cf0\kerning1\dbch\af6\langfe2052\dbch\af7\afs24\alang1081\loch\f3\fs24\lang16393\sl276\slmult1\sb0\sa200{\rtlch \ltrch\loch\fs22\lang9\loch\f5
+\tab \tab \tab break;}
+\par \pard\plain \s0\nowidctlpar\hyphpar0\cf0\kerning1\dbch\af6\langfe2052\dbch\af7\afs24\alang1081\loch\f3\fs24\lang16393\sl276\slmult1\sb0\sa200\rtlch \ltrch\loch\fs22\lang9\loch\f5
+
+\par \pard\plain \s0\nowidctlpar\hyphpar0\cf0\kerning1\dbch\af6\langfe2052\dbch\af7\afs24\alang1081\loch\f3\fs24\lang16393\sl276\slmult1\sb0\sa200{\rtlch \ltrch\loch\fs22\lang9\loch\f5
+\tab \tab case 2:}
+\par \pard\plain \s0\nowidctlpar\hyphpar0\cf0\kerning1\dbch\af6\langfe2052\dbch\af7\afs24\alang1081\loch\f3\fs24\lang16393\sl276\slmult1\sb0\sa200{\rtlch \ltrch\loch\fs22\lang9\loch\f5
+\tab \tab \tab g.display();}
+\par \pard\plain \s0\nowidctlpar\hyphpar0\cf0\kerning1\dbch\af6\langfe2052\dbch\af7\afs24\alang1081\loch\f3\fs24\lang16393\sl276\slmult1\sb0\sa200{\rtlch \ltrch\loch\fs22\lang9\loch\f5
+\tab \tab \tab break;}
+\par \pard\plain \s0\nowidctlpar\hyphpar0\cf0\kerning1\dbch\af6\langfe2052\dbch\af7\afs24\alang1081\loch\f3\fs24\lang16393\sl276\slmult1\sb0\sa200\rtlch \ltrch\loch\fs22\lang9\loch\f5
+
+\par \pard\plain \s0\nowidctlpar\hyphpar0\cf0\kerning1\dbch\af6\langfe2052\dbch\af7\afs24\alang1081\loch\f3\fs24\lang16393\sl276\slmult1\sb0\sa200{\rtlch \ltrch\fs22\lang9\loch\f5
+        }{\rtlch \ltrch\loch\fs22\lang9\loch\f5
+case 3:}
+\par \pard\plain \s0\nowidctlpar\hyphpar0\cf0\kerning1\dbch\af6\langfe2052\dbch\af7\afs24\alang1081\loch\f3\fs24\lang16393\sl276\slmult1\sb0\sa200{\rtlch \ltrch\fs22\lang9\loch\f5
+            }{\rtlch \ltrch\loch\fs22\lang9\loch\f5
+g.add_vertex();}
+\par \pard\plain \s0\nowidctlpar\hyphpar0\cf0\kerning1\dbch\af6\langfe2052\dbch\af7\afs24\alang1081\loch\f3\fs24\lang16393\sl276\slmult1\sb0\sa200{\rtlch \ltrch\fs22\lang9\loch\f5
+            }{\rtlch \ltrch\loch\fs22\lang9\loch\f5
+break;}
+\par \pard\plain \s0\nowidctlpar\hyphpar0\cf0\kerning1\dbch\af6\langfe2052\dbch\af7\afs24\alang1081\loch\f3\fs24\lang16393\sl276\slmult1\sb0\sa200\rtlch \ltrch\loch\fs22\lang9\loch\f5
+
+\par \pard\plain \s0\nowidctlpar\hyphpar0\cf0\kerning1\dbch\af6\langfe2052\dbch\af7\afs24\alang1081\loch\f3\fs24\lang16393\sl276\slmult1\sb0\sa200{\rtlch \ltrch\fs22\lang9\loch\f5
+        }{\rtlch \ltrch\loch\fs22\lang9\loch\f5
+case 4:}
+\par \pard\plain \s0\nowidctlpar\hyphpar0\cf0\kerning1\dbch\af6\langfe2052\dbch\af7\afs24\alang1081\loch\f3\fs24\lang16393\sl276\slmult1\sb0\sa200{\rtlch \ltrch\fs22\lang9\loch\f5
+            }{\rtlch \ltrch\loch\fs22\lang9\loch\f5
+g.delete_edge();}
+\par \pard\plain \s0\nowidctlpar\hyphpar0\cf0\kerning1\dbch\af6\langfe2052\dbch\af7\afs24\alang1081\loch\f3\fs24\lang16393\sl276\slmult1\sb0\sa200{\rtlch \ltrch\fs22\lang9\loch\f5
+            }{\rtlch \ltrch\loch\fs22\lang9\loch\f5
+break;}
+\par \pard\plain \s0\nowidctlpar\hyphpar0\cf0\kerning1\dbch\af6\langfe2052\dbch\af7\afs24\alang1081\loch\f3\fs24\lang16393\sl276\slmult1\sb0\sa200\rtlch \ltrch\loch\fs22\lang9\loch\f5
+
+\par \pard\plain \s0\nowidctlpar\hyphpar0\cf0\kerning1\dbch\af6\langfe2052\dbch\af7\afs24\alang1081\loch\f3\fs24\lang16393\sl276\slmult1\sb0\sa200{\rtlch \ltrch\fs22\lang9\loch\f5
+        }{\rtlch \ltrch\loch\fs22\lang9\loch\f5
+case 5:}
+\par \pard\plain \s0\nowidctlpar\hyphpar0\cf0\kerning1\dbch\af6\langfe2052\dbch\af7\afs24\alang1081\loch\f3\fs24\lang16393\sl276\slmult1\sb0\sa200{\rtlch \ltrch\fs22\lang9\loch\f5
+            }{\rtlch \ltrch\loch\fs22\lang9\loch\f5
+g.delete_vertex();}
+\par \pard\plain \s0\nowidctlpar\hyphpar0\cf0\kerning1\dbch\af6\langfe2052\dbch\af7\afs24\alang1081\loch\f3\fs24\lang16393\sl276\slmult1\sb0\sa200{\rtlch \ltrch\fs22\lang9\loch\f5
+            }{\rtlch \ltrch\loch\fs22\lang9\loch\f5
+break;}
+\par \pard\plain \s0\nowidctlpar\hyphpar0\cf0\kerning1\dbch\af6\langfe2052\dbch\af7\afs24\alang1081\loch\f3\fs24\lang16393\sl276\slmult1\sb0\sa200\rtlch \ltrch\loch\fs22\lang9\loch\f5
+
+\par \pard\plain \s0\nowidctlpar\hyphpar0\cf0\kerning1\dbch\af6\langfe2052\dbch\af7\afs24\alang1081\loch\f3\fs24\lang16393\sl276\slmult1\sb0\sa200{\rtlch \ltrch\fs22\lang9\loch\f5
+        }{\rtlch \ltrch\loch\fs22\lang9\loch\f5
+case 6:}
+\par \pard\plain \s0\nowidctlpar\hyphpar0\cf0\kerning1\dbch\af6\langfe2052\dbch\af7\afs24\alang1081\loch\f3\fs24\lang16393\sl276\slmult1\sb0\sa200{\rtlch \ltrch\fs22\lang9\loch\f5
+            }{\rtlch \ltrch\loch\fs22\lang9\loch\f5
+g.indegree_outdegree();}
+\par \pard\plain \s0\nowidctlpar\hyphpar0\cf0\kerning1\dbch\af6\langfe2052\dbch\af7\afs24\alang1081\loch\f3\fs24\lang16393\sl276\slmult1\sb0\sa200{\rtlch \ltrch\fs22\lang9\loch\f5
+            }{\rtlch \ltrch\loch\fs22\lang9\loch\f5
+break;}
+\par \pard\plain \s0\nowidctlpar\hyphpar0\cf0\kerning1\dbch\af6\langfe2052\dbch\af7\afs24\alang1081\loch\f3\fs24\lang16393\sl276\slmult1\sb0\sa200\rtlch \ltrch\loch\fs22\lang9\loch\f5
+
+\par \pard\plain \s0\nowidctlpar\hyphpar0\cf0\kerning1\dbch\af6\langfe2052\dbch\af7\afs24\alang1081\loch\f3\fs24\lang16393\sl276\slmult1\sb0\sa200{\rtlch \ltrch\loch\fs22\lang9\loch\f5
+\tab \tab case 7:}
+\par \pard\plain \s0\nowidctlpar\hyphpar0\cf0\kerning1\dbch\af6\langfe2052\dbch\af7\afs24\alang1081\loch\f3\fs24\lang16393\sl276\slmult1\sb0\sa200{\rtlch \ltrch\loch\fs22\lang9\loch\f5
+\tab \tab \tab exit(1);}
+\par \pard\plain \s0\nowidctlpar\hyphpar0\cf0\kerning1\dbch\af6\langfe2052\dbch\af7\afs24\alang1081\loch\f3\fs24\lang16393\sl276\slmult1\sb0\sa200{\rtlch \ltrch\loch\fs22\lang9\loch\f5
+\tab \tab \tab break;}
+\par \pard\plain \s0\nowidctlpar\hyphpar0\cf0\kerning1\dbch\af6\langfe2052\dbch\af7\afs24\alang1081\loch\f3\fs24\lang16393\sl276\slmult1\sb0\sa200{\rtlch \ltrch\loch\fs22\lang9\loch\f5
+\tab \tab default:}
+\par \pard\plain \s0\nowidctlpar\hyphpar0\cf0\kerning1\dbch\af6\langfe2052\dbch\af7\afs24\alang1081\loch\f3\fs24\lang16393\sl276\slmult1\sb0\sa200{\rtlch \ltrch\loch\fs22\lang9\loch\f5
+\tab \tab \tab cout<<"\\nEnter valid choice!!";}
+\par \pard\plain \s0\nowidctlpar\hyphpar0\cf0\kerning1\dbch\af6\langfe2052\dbch\af7\afs24\alang1081\loch\f3\fs24\lang16393\sl276\slmult1\sb0\sa200{\rtlch \ltrch\loch\fs22\lang9\loch\f5
+\tab \tab \tab break;}
+\par \pard\plain \s0\nowidctlpar\hyphpar0\cf0\kerning1\dbch\af6\langfe2052\dbch\af7\afs24\alang1081\loch\f3\fs24\lang16393\sl276\slmult1\sb0\sa200{\rtlch \ltrch\loch\fs22\lang9\loch\f5
+\tab \tab \}}
+\par \pard\plain \s0\nowidctlpar\hyphpar0\cf0\kerning1\dbch\af6\langfe2052\dbch\af7\afs24\alang1081\loch\f3\fs24\lang16393\sl276\slmult1\sb0\sa200\rtlch \ltrch\loch\fs22\lang9\loch\f5
+
+\par \pard\plain \s0\nowidctlpar\hyphpar0\cf0\kerning1\dbch\af6\langfe2052\dbch\af7\afs24\alang1081\loch\f3\fs24\lang16393\sl276\slmult1\sb0\sa200{\rtlch \ltrch\loch\fs22\lang9\loch\f5
+\tab \}}
+\par \pard\plain \s0\nowidctlpar\hyphpar0\cf0\kerning1\dbch\af6\langfe2052\dbch\af7\afs24\alang1081\loch\f3\fs24\lang16393\sl276\slmult1\sb0\sa200{\rtlch \ltrch\loch\fs22\lang9\loch\f5
+\}}
+\par }
